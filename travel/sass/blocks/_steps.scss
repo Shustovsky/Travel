@@ -1,0 +1,26 @@
+.steps {
+    height: 424px;
+    .title {
+        padding-top: 80px;
+    }
+    &__items {
+        padding: 40px 132px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        img {
+            display: block;
+            margin: 0 auto;
+        }
+        p {
+            padding-top: 30px;
+            font-family: 'Aleo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            color: #0D606F;
+        }
+    }
+}
