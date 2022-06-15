@@ -8,6 +8,7 @@ header {
         display: flex;
         justify-content: space-between;
         padding: 0 120px;
+        margin-right: 25px;
         align-items: center;
         height: 90px;
         background: rgba(242, 120, 92, 0.7);
@@ -20,7 +21,11 @@ header {
             line-height: 39px;
             color: #FFFFFF;
             img {
-                padding-right: 6px;
+                padding-right: 4px;
+            }
+            p {
+                display: inline-block;
+                margin-left: -1px;
             }
         }
         &__list {
