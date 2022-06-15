@@ -1,6 +1,9 @@
 header {
-    height: 765px;
-    background: url('../img/background-header.jpg') center no-repeat;
+    .container {
+        background-image: url('../img/background-header.jpg');
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
     .nav {
         display: flex;
         justify-content: space-between;
