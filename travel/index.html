@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:wght@400;700&family=Magra&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -18,7 +20,8 @@
         <div class="container">
             <nav class="nav">
                 <div class="nav__logo">
-                    <img src="icons/logo.svg" alt="logo"> Travel Portal
+                    <img src="icons/logo.svg" alt="logo">
+                    <p>Travel Portal</p>
                 </div>
                 <div class="nav__list">
                     <ul>
@@ -68,11 +71,30 @@
                 </div>
             </div>
         </section>
-        <section class="destinations"></section>
+        <section class="destinations">
+            <div class="container">
+                <h2 class="title">POPULAR DESTINATIONS</h2>
+                <div class="my__slider">
+
+                    <div><img src="img/carousel/gates.jpg" alt="gates"></div>
+                    <div><img src="img/carousel/bridge.jpg" alt="bridge"></div>
+                    <div><img src="img/carousel/rocks.jpg" alt="rocks"></div>
+                </div>
+                <div class="my__slider_btn">
+                    <button></button>
+                    <button></button>
+                    <button></button>
+                </div>
+                <div class="btn">
+                    <button><img src="icons/arrow-right.svg" alt="arrow-right"><span>Find More</span></button>
+                </div>
+            </div>
+        </section>
         <section class="stories"></section>
     </main>
     <footer></footer>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="js/script.js"></script>
 </body>
 
 </html>
