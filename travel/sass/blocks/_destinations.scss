@@ -1,0 +1,30 @@
+.destinations {
+    height: 1069px;
+    .my__slider {
+        padding-top: 46px;
+        &_btn {
+            text-align: center;
+            padding-top: 21px;
+            button {
+                width: 20px;
+                height: 20px;
+                background: rgba(242, 120, 92, 1);
+                border-radius: 100%;
+                border: none;
+                cursor: pointer;
+                margin: 0 3px;
+            }
+        }
+    }
+    .btn {
+        margin: 0 auto;
+        margin-top: 37px;
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 32px;
+        }
+    }
+}

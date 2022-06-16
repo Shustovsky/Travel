@@ -89,17 +89,22 @@ header .nav__logo {
 }
 
 header .nav__logo img {
-  padding-right: 6px;
+  padding-right: 4px;
 }
 
-header .nav__list {
-  width: 527px;
+header .nav__logo p {
+  display: inline-block;
+  margin-left: -1px;
 }
 
 header .nav__list ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+}
+
+header .nav__list ul li {
+  padding-right: 42px;
 }
 
 header .nav__list ul li a {
@@ -197,4 +202,40 @@ header .nav__list ul li a {
   font-size: 20px;
   line-height: 24px;
   color: #0D606F;
+}
+
+.destinations {
+  height: 1069px;
+}
+
+.destinations .my__slider {
+  padding-top: 46px;
+}
+
+.destinations .my__slider_btn {
+  text-align: center;
+  padding-top: 21px;
+}
+
+.destinations .my__slider_btn button {
+  width: 20px;
+  height: 20px;
+  background: #f2785c;
+  border-radius: 100%;
+  border: none;
+  cursor: pointer;
+  margin: 0 3px;
+}
+
+.destinations .btn {
+  margin: 0 auto;
+  margin-top: 37px;
+}
+
+.destinations .btn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 32px;
 }
