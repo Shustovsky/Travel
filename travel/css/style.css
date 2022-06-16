@@ -135,7 +135,6 @@ header .nav__list ul li a {
   background-image: url("../img/background-header.jpg");
   background-repeat: no-repeat;
   background-position: center calc(-1 * 90px);
-  /*  background: url('../img/background-header.jpg') center no-repeat; */
 }
 
 .preview__container {
@@ -289,4 +288,31 @@ header .nav__list ul li a {
 
 .stories__item_dscr p a {
   color: #0D606F;
+}
+
+.footer__container {
+  height: 61px;
+  background-image: url("../img/background-footer.jpg");
+  background-repeat: no-repeat;
+  background-position: center calc(-1 * 1270px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 121px 13px 590px;
+}
+
+.footer__container .rights {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+}
+
+.footer__container .social {
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
