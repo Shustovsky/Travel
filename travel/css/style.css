@@ -181,6 +181,10 @@ header .nav__list ul li a {
   color: #F2785C;
 }
 
+.preview__search input::-webkit-input-placeholder {
+  color: #F2785C;
+}
+
 .preview__search .btn {
   position: absolute;
   right: -85px;
