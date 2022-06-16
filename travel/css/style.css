@@ -205,9 +205,15 @@ header .nav__list ul li a {
   justify-content: space-between;
 }
 
-.steps__item img {
-  display: block;
+.steps__item_icon {
+  width: 100px;
+  height: 100px;
+  background: #F2785C;
+  border-radius: 16px;
   margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .steps__item p {
