@@ -260,7 +260,7 @@ header .nav__list ul li a {
 }
 
 .stories__container {
-  height: 1270px;
+  min-height: 1270px;
   margin-top: 40px;
   background: rgba(255, 255, 255, 0.7);
   padding: 10px 120px 41px;
@@ -300,11 +300,14 @@ header .nav__list ul li a {
   color: #0D606F;
 }
 
-.footer__container {
+.footer {
   height: 61px;
   background-image: url("../img/background-footer.jpg");
   background-repeat: no-repeat;
   background-position: center calc(-1 * 1270px);
+}
+
+.footer__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
