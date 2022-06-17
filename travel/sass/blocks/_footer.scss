@@ -7,8 +7,9 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 14px 121px 13px 590px;
+        padding: 0 121px;
         .rights {
+            padding-right: 51px;
             font-family: 'Red Hat Text';
             font-style: normal;
             font-weight: 500;
@@ -24,6 +25,24 @@
                 align-items: center;
                 list-style-type: none;
             }
+        }
+    }
+    &__add {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        a {
+            font-family: 'Red Hat Text';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        &_img {
+            max-height: 55px;
         }
     }
 }

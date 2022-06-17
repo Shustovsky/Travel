@@ -55,7 +55,7 @@ html {
 
 .btn-arrow {
   margin: 0 auto;
-  margin-top: 37px;
+  margin-top: 30px;
 }
 
 .btn-arrow button {
@@ -431,7 +431,7 @@ header .nav__list ul li a {
   min-height: 1270px;
   margin-top: 40px;
   background: rgba(255, 255, 255, 0.7);
-  padding: 10px 120px 41px;
+  padding: 10px 120px 0;
 }
 
 .stories__item {
@@ -479,10 +479,11 @@ header .nav__list ul li a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 14px 121px 13px 590px;
+  padding: 0 121px;
 }
 
 .footer__container .rights {
+  padding-right: 51px;
   font-family: 'Red Hat Text';
   font-style: normal;
   font-weight: 500;
@@ -500,4 +501,25 @@ header .nav__list ul li a {
   justify-content: space-between;
   align-items: center;
   list-style-type: none;
+}
+
+.footer__add {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer__add a {
+  font-family: 'Red Hat Text';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.footer__add_img {
+  max-height: 55px;
 }
