@@ -322,7 +322,11 @@ header .nav__list ul li a {
 
 .footer__container .social {
   width: 140px;
+}
+
+.footer__container .social__list {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  list-style-type: none;
 }
