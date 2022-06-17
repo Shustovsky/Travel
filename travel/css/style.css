@@ -308,7 +308,7 @@ header .nav__list ul li a {
 .preview__container {
   width: 910px;
   min-height: 422px;
-  padding: 35px 0 0 120px;
+  padding: 32px 0 0 120px;
   font-family: 'Aleo';
   color: #FFFFFF;
 }
@@ -322,7 +322,7 @@ header .nav__list ul li a {
 }
 
 .preview__container p {
-  padding-top: 29px;
+  padding-top: 32px;
   font-style: italic;
   font-weight: 400;
   font-size: 20px;
@@ -335,7 +335,7 @@ header .nav__list ul li a {
 }
 
 .preview__search input {
-  padding: 33px 0 41px 37px;
+  padding: 33px 0 34px 37px;
   width: 892px;
   height: 95px;
   background: rgba(255, 255, 255, 0.7);
