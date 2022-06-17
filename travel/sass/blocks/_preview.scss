@@ -1,11 +1,11 @@
 .preview {
-    height: 675px;
+    min-height: 675px;
     background-image: url('../img/background-header.jpg');
     background-repeat: no-repeat;
     background-position: center calc(-1 * 90px);
     &__container {
         width: 910px;
-        height: 422px;
+        min-height: 422px;
         padding: 35px 0 0 120px;
         font-family: 'Aleo';
         color: #FFFFFF;
