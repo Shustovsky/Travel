@@ -55,7 +55,7 @@ html {
 
 .btn-arrow {
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 33px;
 }
 
 .btn-arrow button {
@@ -278,6 +278,10 @@ header .nav__logo p {
   margin-left: -1px;
 }
 
+header .nav__list {
+  padding-left: 16px;
+}
+
 header .nav__list ul {
   display: flex;
   justify-content: space-between;
@@ -323,8 +327,9 @@ header .nav__list ul li a {
 
 .preview__container p {
   padding-top: 32px;
+  font-family: 'Aleo';
   font-style: italic;
-  font-weight: 400;
+  font-weight: 700;
   font-size: 20px;
   line-height: 24px;
 }
@@ -335,7 +340,7 @@ header .nav__list ul li a {
 }
 
 .preview__search input {
-  padding: 33px 0 34px 37px;
+  padding: 33px 0 34px 42px;
   width: 892px;
   height: 95px;
   background: rgba(255, 255, 255, 0.7);
@@ -412,7 +417,7 @@ header .nav__list ul li a {
 
 .destinations .my__slider_btn {
   text-align: center;
-  padding-top: 21px;
+  padding-top: 19px;
 }
 
 .destinations .my__slider_btn button {
@@ -445,7 +450,7 @@ header .nav__list ul li a {
 .stories__item {
   display: flex;
   gap: 40px;
-  margin-top: 27px;
+  margin-top: 26px;
 }
 
 .stories__item_img img {
