@@ -423,11 +423,15 @@ header .nav__list ul li a {
 .destinations .my__slider_btn button {
   width: 20px;
   height: 20px;
-  background: #f2785c;
+  background: rgba(242, 120, 92, 0.5);
   border-radius: 100%;
   border: none;
   cursor: pointer;
   margin: 0 3px;
+}
+
+.destinations .my__slider_btn .tns-nav-active {
+  background: #F2785C;
 }
 
 .stories {
