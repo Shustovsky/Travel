@@ -361,6 +361,7 @@ header .nav__list ul li a {
 
 .steps {
   min-height: 424px;
+  position: relative;
 }
 
 .steps .title {
@@ -392,6 +393,13 @@ header .nav__list ul li a {
   font-size: 20px;
   line-height: 24px;
   color: #0D606F;
+}
+
+.steps__calendar-special {
+  position: absolute;
+  top: 97px;
+  left: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .destinations {

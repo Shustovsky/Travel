@@ -1,5 +1,6 @@
 .steps {
     min-height: 424px;
+    position: relative;
     .title {
         padding-top: 80px;
     }
@@ -28,5 +29,11 @@
             line-height: 24px;
             color: #0D606F;
         }
+    }
+    &__calendar-special {
+        position: absolute;
+        top: 97px;
+        left: 50%;
+        transform: translate(-50%, 50%);
     }
 }
