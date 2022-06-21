@@ -483,6 +483,7 @@ header .nav__list ul li a {
 
 .stories__item_dscr p a {
   color: #0D606F;
+  font-weight: 700;
 }
 
 .footer {
