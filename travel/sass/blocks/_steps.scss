@@ -1,8 +1,11 @@
 .steps {
-    min-height: 424px;
     position: relative;
     .title {
         padding-top: 80px;
+    }
+    &__container {
+        min-height: 424px;
+        background-color: #ffffff;
     }
     &__items {
         padding: 40px 132px 0;

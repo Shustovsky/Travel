@@ -1,11 +1,14 @@
 .stories {
-    margin-top: 55px;
+    &__container {
+        padding-top: 55px;
+        background-color: #fff;
+    }
     &__wrapper {
         background-image: url('../img/background-footer.jpg');
         background-repeat: no-repeat;
         background-position: center 0;
     }
-    &__container {
+    &__items {
         min-height: 1270px;
         margin-top: 40px;
         background: rgba(255, 255, 255, 0.7);
@@ -31,7 +34,7 @@
                 color: #0D606F;
             }
             p {
-                padding-top: 24px;
+                padding-top: 26px;
                 font-family: 'Aleo';
                 font-style: normal;
                 font-weight: 400;

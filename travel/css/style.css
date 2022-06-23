@@ -15,6 +15,10 @@ html {
   /* для плавной прокрутки */
 }
 
+body {
+  background-color: black;
+}
+
 .container {
   margin: 0 auto;
   max-width: 1440px;
@@ -55,7 +59,7 @@ html {
 
 .btn-arrow {
   margin: 0 auto;
-  margin-top: 33px;
+  margin-top: 36px;
 }
 
 .btn-arrow button {
@@ -366,12 +370,16 @@ header .nav__list ul li a {
 }
 
 .steps {
-  min-height: 424px;
   position: relative;
 }
 
 .steps .title {
   padding-top: 80px;
+}
+
+.steps__container {
+  min-height: 424px;
+  background-color: #ffffff;
 }
 
 .steps__items {
@@ -410,6 +418,7 @@ header .nav__list ul li a {
 
 .destinations {
   min-height: 1069px;
+  background-color: #ffffff;
 }
 
 .destinations .my__slider {
@@ -435,8 +444,9 @@ header .nav__list ul li a {
   background: #F2785C;
 }
 
-.stories {
-  margin-top: 55px;
+.stories__container {
+  padding-top: 55px;
+  background-color: #fff;
 }
 
 .stories__wrapper {
@@ -445,7 +455,7 @@ header .nav__list ul li a {
   background-position: center 0;
 }
 
-.stories__container {
+.stories__items {
   min-height: 1270px;
   margin-top: 40px;
   background: rgba(255, 255, 255, 0.7);
@@ -473,7 +483,7 @@ header .nav__list ul li a {
 }
 
 .stories__item_dscr p {
-  padding-top: 24px;
+  padding-top: 26px;
   font-family: 'Aleo';
   font-style: normal;
   font-weight: 400;
