@@ -32,6 +32,7 @@
         justify-content: space-between;
         align-items: center;
         gap: 30px;
+        padding: 5px 0;
         a {
             font-family: 'Red Hat Text';
             font-style: normal;
@@ -42,7 +43,7 @@
             text-decoration: none;
         }
         &_img {
-            max-height: 55px;
+            height: 45px;
         }
     }
 }

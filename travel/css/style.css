@@ -537,6 +537,7 @@ header .nav__list ul li a {
   justify-content: space-between;
   align-items: center;
   gap: 30px;
+  padding: 5px 0;
 }
 
 .footer__add a {
@@ -550,5 +551,5 @@ header .nav__list ul li a {
 }
 
 .footer__add_img {
-  max-height: 55px;
+  height: 45px;
 }
