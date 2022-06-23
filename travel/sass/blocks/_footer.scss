@@ -1,0 +1,49 @@
+.footer {
+    height: 61px;
+    background-image: url('../img/background-footer.jpg');
+    background-repeat: no-repeat;
+    background-position: center calc(-1 * 1270px);
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 121px;
+        .rights {
+            padding-right: 51px;
+            font-family: 'Red Hat Text';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #FFFFFF;
+        }
+        .social {
+            width: 140px;
+            &__list {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                list-style-type: none;
+            }
+        }
+    }
+    &__add {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        padding: 5px 0;
+        a {
+            font-family: 'Red Hat Text';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 21px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+        &_img {
+            height: 45px;
+        }
+    }
+}

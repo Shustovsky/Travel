@@ -1,0 +1,57 @@
+header {
+    .container {
+        background-image: url('../img/background-header.jpg');
+        background-repeat: no-repeat;
+        background-position: center 0;
+    }
+    .nav {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 120px;
+        align-items: center;
+        min-height: 90px;
+        background: rgba(242, 120, 92, 0.7);
+        box-shadow: 0px 4px 4px rgba(13, 96, 111, 0.5);
+        &__logo {
+            font-family: 'Magra';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 32px;
+            line-height: 39px;
+            color: #FFFFFF;
+            img {
+                padding-right: 4px;
+            }
+            p {
+                display: inline-block;
+                margin-left: -1px;
+            }
+        }
+        &__list {
+            padding-left: 16px;
+            ul {
+                display: flex;
+                justify-content: space-between;
+                list-style-type: none;
+                li {
+                    padding-right: 42px;
+                    a {
+                        text-decoration: none;
+                        font-family: 'Red Hat Text';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 16px;
+                        line-height: 21px;
+                        color: #FFFFFF;
+                        &:hover {
+                            transition: all 2s;
+                            color: #000000;
+                            text-decoration: dotted underline 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

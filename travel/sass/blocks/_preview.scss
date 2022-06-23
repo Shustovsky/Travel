@@ -1,0 +1,54 @@
+.preview {
+    min-height: 675px;
+    background-image: url('../img/background-header.jpg');
+    background-repeat: no-repeat;
+    background-position: center calc(-1 * 90px);
+    &__container {
+        width: 910px;
+        min-height: 422px;
+        padding: 32px 0 0 120px;
+        font-family: 'Aleo';
+        color: #FFFFFF;
+        h1 {
+            margin: 0;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 80px;
+            line-height: 96px;
+        }
+        p {
+            padding-top: 32px;
+            font-family: 'Aleo';
+            font-style: italic;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+        }
+    }
+    &__search {
+        position: relative;
+        padding-top: 46px;
+        input {
+            padding: 33px 0 34px 42px;
+            width: 892px;
+            height: 95px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            border: none;
+            font-family: 'Aleo';
+            font-style: italic;
+            font-weight: 400;
+            font-size: 24px;
+            line-height: 29px;
+            color: #F2785C;
+            &::-webkit-input-placeholder {
+                color: #F2785C;
+            }
+        }
+        .btn {
+            position: absolute;
+            right: -85px;
+            top: 65px;
+        }
+    }
+}

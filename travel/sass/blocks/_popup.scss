@@ -1,0 +1,122 @@
+.popup {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 650px;
+    height: 660px;
+    padding: 25px 45px 0;
+    background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    &_title {
+        text-align: center;
+        font-family: 'Aleo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 38px;
+        color: #0D606F;
+    }
+    &__buttons {
+        padding-top: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+    &_divider {
+        margin-top: 30px;
+        text-align: center;
+        span {
+            padding: 9px;
+            position: relative;
+            font-family: 'Aleo';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            color: rgba(13, 96, 111, 0.5);
+            &::before {
+                content: '';
+                position: absolute;
+                width: 261px;
+                right: 35px;
+                top: 17px;
+                border: 1px solid rgba(13, 96, 111, 0.5);
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                width: 261px;
+                left: 35px;
+                top: 17px;
+                border: 1px solid rgba(13, 96, 111, 0.5);
+            }
+        }
+    }
+    &__input {
+        padding: 12px 0;
+        p {
+            font-family: 'Aleo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #0D606F;
+        }
+        input {
+            width: 100%;
+            height: 54px;
+            background: #FFFFFF;
+            box-shadow: inset 0px 0px 3px rgba(13, 96, 111, 0.08), inset 0px 2px 3px rgba(13, 96, 111, 0.16);
+            border-radius: 10px;
+            border: none;
+            padding: 20px;
+            color: #0D606F;
+            font-size: 26px;
+        }
+    }
+    &_sign {
+        padding-top: 16px;
+    }
+    &_forget {
+        padding-top: 10px;
+        text-align: center;
+        font-family: 'Aleo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        text-decoration-line: underline;
+        text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+        a {
+            color: #0D606F;
+        }
+    }
+    &_divider-second {
+        margin-top: 26px;
+        max-width: 560px;
+        left: 45px;
+        top: 598px;
+        border: 1px solid rgba(13, 96, 111, 0.5);
+        transform: rotate(0.1deg);
+    }
+    &_register {
+        padding-top: 20px;
+        text-align: center;
+        font-family: 'Aleo';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        color: rgba(13, 96, 111, 0.5);
+        text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
+        a {
+            color: #0D606F;
+        }
+    }
+}

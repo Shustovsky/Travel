@@ -1,0 +1,35 @@
+/* font-family: 'Aleo', serif;
+font-family: 'Magra', sans-serif;
+font-family: 'Red Hat Text', sans-serif; */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* outline: 1px solid red; */
+    /* подчеркивает каждый элемент карсным */
+}
+
+html {
+    scroll-behavior: smooth;
+    /* для плавной прокрутки */
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1440px;
+}
+
+@import "blocks/buttons";
+@import "blocks/title";
+@import "blocks/popup";
+@import "blocks/header";
+@import "blocks/preview";
+@import "blocks/steps";
+@import "blocks/destinations";
+@import "blocks/stories";
+@import "blocks/footer";
