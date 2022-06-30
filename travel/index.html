@@ -11,7 +11,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -109,15 +108,24 @@
             </section>
             <section class="destinations" id="destinations">
                 <h2 class="title">POPULAR DESTINATIONS</h2>
-                <div class="my__slider">
-                    <div><img srcset="img/carousel/gates-min.jpg 400w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates"></div>
-                    <div><img srcset="img/carousel/bridge-min.jpg 400w, img/carousel/bridge.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/bridge.jpg" alt="bridge"></div>
-                    <div><img srcset="img/carousel/rocks-min.jpg 400w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks"></div>
+                <div class="destinations__slider">
+                    <div class="destinations__slider__item"><img srcset="img/carousel/rocks-min.jpg 400w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
+                        <p>island</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/gates-min.jpg 400w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates">
+                        <p>japan</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/bridge-min.jpg 400w, img/carousel/bridge.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/bridge.jpg" alt="bridge">
+                        <p>usa</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/rocks-min.jpg 400w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 390px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
+                        <p>island</p>
+                    </div>
                 </div>
-                <div class="my__slider_btn">
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                <div class="destinations__slider_btns">
+                    <button class="destinations__slider_btn"></button>
+                    <button class="destinations__slider_btn destinations__slider_btn-active"></button>
+                    <button class="destinations__slider_btn"></button>
                 </div>
                 <div class="btn btn-arrow">
                     <button><img src="icons/arrow-right.svg" alt="arrow-right"><span>Find More</span></button>
@@ -207,7 +215,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
     <script src="js/index.js"></script>
 </body>
 

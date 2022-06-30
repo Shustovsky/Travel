@@ -1,21 +1,42 @@
 .destinations {
     min-height: 1069px;
     background-color: #ffffff;
-    .my__slider {
-        padding-top: 46px;
-        &_btn {
+    overflow: hidden;
+    &__slider {
+        padding-top: 45px;
+        display: flex;
+        gap: 60px;
+        position: relative;
+        right: 538px;
+        width: 3440px;
+        height: 850px;
+        &__item {
+            p {
+                position: relative;
+                bottom: 87px;
+                left: 14px;
+                font-family: 'Red Hat Text';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 42px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+            }
+        }
+        &_btns {
             text-align: center;
             padding-top: 19px;
-            button {
-                width: 20px;
-                height: 20px;
-                background: rgba(242, 120, 92, 0.5);
-                border-radius: 100%;
-                border: none;
-                cursor: pointer;
-                margin: 0 3px;
-            }
-            .tns-nav-active {
+        }
+        &_btn {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: rgba(242, 120, 92, 0.5);
+            border-radius: 100%;
+            border: none;
+            margin: 0 3px;
+            &-active {
                 background: #F2785C;
             }
         }
