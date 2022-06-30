@@ -13,6 +13,9 @@
         justify-content: space-between;
     }
     &__item {
+        &:nth-child(2) {
+            padding-left: 73px;
+        }
         &_icon {
             width: 100px;
             height: 100px;
