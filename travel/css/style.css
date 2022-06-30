@@ -314,6 +314,20 @@ header .nav__list ul li a:hover {
   text-decoration: dotted underline 1px;
 }
 
+header .nav__burger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 9px 9px 0;
+  cursor: pointer;
+}
+
+header .nav__burger div {
+  width: 26.25px;
+  height: 2.67px;
+  background: #FFFFFF;
+}
+
 .preview {
   min-height: 675px;
   background-image: url("../img/background-header.jpg");
@@ -431,7 +445,7 @@ header .nav__list ul li a:hover {
   display: flex;
   gap: 60px;
   position: relative;
-  right: 538px;
+  right: 540px;
   min-width: 3440px;
   max-height: 850px;
 }
@@ -493,7 +507,7 @@ header .nav__list ul li a:hover {
 }
 
 .stories__container {
-  padding-top: 55px;
+  padding-top: 83px;
   background-color: #fff;
 }
 
@@ -560,7 +574,7 @@ header .nav__list ul li a:hover {
 }
 
 .footer__container .rights {
-  padding-right: 108px;
+  padding-right: 111px;
   font-family: 'Red Hat Text';
   font-style: normal;
   font-weight: 500;
@@ -749,6 +763,9 @@ header .nav__list ul li a:hover {
     background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 72.1%);
     box-shadow: none;
   }
+  header .nav__burger {
+    display: flex;
+  }
   main .preview {
     min-height: 176px;
     background-image: url("../img/background-header-min.jpg");
@@ -768,14 +785,14 @@ header .nav__list ul li a:hover {
   }
   main .preview__search input {
     padding: 22px 0 21px 17px;
-    width: 360px;
+    width: 96%;
     height: 48px;
     font-family: 'Aleo';
     font-size: 14px;
     line-height: 17px;
   }
   main .preview__search .btn {
-    right: 25px;
+    right: 6%;
     top: 76px;
   }
   main .steps__container {
@@ -839,6 +856,7 @@ header .nav__list ul li a:hover {
     font-size: 20px;
     line-height: 26px;
     bottom: 205px;
+    left: 4%;
   }
   main .destinations__slider_btns {
     position: relative;
@@ -874,24 +892,23 @@ header .nav__list ul li a:hover {
     padding: 9px 15px 0;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
   }
   .stories__items .btn {
     margin-top: -4px;
   }
   .stories__item {
     gap: 10px;
-    height: 130px;
+    min-height: 130px;
     margin-top: 1px;
   }
   .stories__item_dscr h3 {
     margin-top: 5px;
     font-size: 11px;
     line-height: 13px;
+    font-weight: 700;
   }
   .stories__item_dscr p {
-    width: 195px;
-    height: 102px;
     padding-top: 10px;
     font-size: 9px;
     line-height: 11px;
