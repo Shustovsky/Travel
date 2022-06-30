@@ -119,7 +119,7 @@
             margin-top: 12px;
             button {
                 gap: 6px;
-                padding: 5.5px 2px;
+                padding: 7.5px 12px;
             }
         }
     }
@@ -142,14 +142,14 @@
         .nav {
             border-radius: 30px 30px 0 0;
             padding: 38px 15px 0px;
-            background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
+            background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 72.1%);
             box-shadow: none;
         }
     }
     main {
         .preview {
             min-height: 176px;
-            background-image: url(../img/background-header-min.jpg);
+            background-image: url('../img/background-header-min.jpg');
             background-repeat: no-repeat;
             background-position: center calc(-1 *75px);
             &__container {
@@ -266,8 +266,56 @@
         }
     }
     .stories {
+        &__wrapper {
+            background-image: url('../img/background-footer-min.jpg');
+        }
         &__container {
             padding-top: 1px;
+        }
+        &__items {
+            min-height: 630px;
+            margin-top: 9px;
+            padding: 9px 15px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            .btn {
+                margin-top: -4px;
+            }
+        }
+        &__item {
+            gap: 10px;
+            height: 130px;
+            margin-top: 1px;
+            &_dscr {
+                h3 {
+                    margin-top: 5px;
+                    font-size: 11px;
+                    line-height: 13px;
+                }
+                p {
+                    width: 195px;
+                    height: 102px;
+                    padding-top: 10px;
+                    font-size: 9px;
+                    line-height: 11px;
+                    .not_show {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    .footer {
+        background-image: url('../img/background-footer-min.jpg');
+        background-position: center calc(-1 * 630px);
+        border-radius: 0 0 30px 30px;
+        &__container {
+            padding: 14px 120px 16px 131px;
+        }
+        &__add,
+        .rights {
+            display: none;
         }
     }
 }
