@@ -1,5 +1,5 @@
 .destinations {
-    min-height: 1069px;
+    max-height: 1069px;
     background-color: #ffffff;
     overflow: hidden;
     &__slider {
@@ -9,7 +9,7 @@
         position: relative;
         right: 538px;
         min-width: 3440px;
-        height: 850px;
+        max-height: 850px;
         &__item {
             p {
                 position: relative;
@@ -38,6 +38,26 @@
             margin: 0 3px;
             &-active {
                 background: #F2785C;
+            }
+        }
+        &_arrow {
+            display: none;
+            position: relative;
+            bottom: 89px;
+            width: 19px;
+            height: 19px;
+            border-top: 4px solid rgba(242, 120, 92, 0.5);
+            border-right: 4px solid rgba(242, 120, 92, 0.5);
+            &-left {
+                transform: rotate(-135deg);
+                left: 30px;
+            }
+            &-right {
+                transform: rotate(45deg);
+                left: 317px;
+            }
+            &-active {
+                border-color: #F2785C;
             }
         }
     }

@@ -115,6 +115,13 @@
             line-height: 15px;
             padding: 7.5px 9px;
         }
+        &-arrow {
+            margin-top: 12px;
+            button {
+                gap: 6px;
+                padding: 5.5px 2px;
+            }
+        }
     }
     .title {
         padding-top: 20px;
@@ -204,6 +211,9 @@
                         padding-right: 15px;
                     }
                 }
+                &:nth-child(2) {
+                    padding-left: 0;
+                }
                 &:nth-child(3) {
                     .steps__item_icon {
                         margin-right: 0;
@@ -214,10 +224,50 @@
         }
         .destinations {
             min-height: 289px;
-            .my__slider {
-                padding-top: 19px;
-                height: 228px;
+            &__slider {
+                padding-top: 20px;
+                gap: 15px;
+                right: 0px;
+                left: 15px;
+                height: 196px;
+                &__item {
+                    img {
+                        border-radius: 16px;
+                    }
+                    p {
+                        font-size: 20px;
+                        line-height: 26px;
+                        bottom: 205px;
+                    }
+                }
+                &_btns {
+                    position: relative;
+                    padding-top: 0;
+                    left: 50%;
+                    transform: translate(-50%, 50%);
+                    bottom: -10px;
+                    width: 36px;
+                    height: 8px;
+                    display: flex;
+                    gap: 6px;
+                }
+                &_btn {
+                    width: 8px;
+                    height: 8px;
+                    margin: 0;
+                    &-active {
+                        order: -1;
+                    }
+                }
+                &_arrow {
+                    display: inline-block;
+                }
             }
+        }
+    }
+    .stories {
+        &__container {
+            padding-top: 1px;
         }
     }
 }
