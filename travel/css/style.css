@@ -432,7 +432,7 @@ header .nav__list ul li a:hover {
   gap: 60px;
   position: relative;
   right: 538px;
-  width: 3440px;
+  min-width: 3440px;
   height: 850px;
 }
 
