@@ -441,13 +441,13 @@ header .nav__burger div {
 }
 
 .destinations__slider {
+  position: relative;
+  min-width: 3440px;
+  max-height: 850px;
+  right: 540px;
   padding-top: 45px;
   display: flex;
   gap: 60px;
-  position: relative;
-  right: 540px;
-  min-width: 3440px;
-  max-height: 850px;
 }
 
 .destinations__slider__item p {
@@ -494,12 +494,12 @@ header .nav__burger div {
 
 .destinations__slider_arrow-left {
   transform: rotate(-135deg);
-  left: 30px;
+  left: 7%;
 }
 
 .destinations__slider_arrow-right {
   transform: rotate(45deg);
-  left: 317px;
+  left: 81%;
 }
 
 .destinations__slider_arrow-active {
@@ -895,7 +895,7 @@ header .nav__burger div {
     gap: 10px;
   }
   .stories__items .btn {
-    margin-top: -4px;
+    margin-top: -5px;
   }
   .stories__item {
     gap: 10px;
@@ -922,7 +922,7 @@ header .nav__burger div {
     border-radius: 0 0 30px 30px;
   }
   .footer__container {
-    padding: 14px 120px 16px 131px;
+    padding: 13px 120px 0 131px;
   }
   .footer__add,
   .footer .rights {

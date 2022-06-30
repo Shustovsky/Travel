@@ -284,7 +284,7 @@
             flex-direction: column;
             gap: 10px;
             .btn {
-                margin-top: -4px;
+                margin-top: -5px;
             }
         }
         &__item {
@@ -314,7 +314,7 @@
         background-position: center calc(-1 * 630px);
         border-radius: 0 0 30px 30px;
         &__container {
-            padding: 14px 120px 16px 131px;
+            padding: 13px 120px 0 131px;
         }
         &__add,
         .rights {
