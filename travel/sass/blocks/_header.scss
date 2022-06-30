@@ -53,5 +53,17 @@ header {
                 }
             }
         }
+        &__burger {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            margin: 0 9px 9px 0;
+            cursor: pointer;
+            div {
+                width: 26.25px;
+                height: 2.67px;
+                background: #FFFFFF;
+            }
+        }
     }
 }
