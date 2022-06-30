@@ -321,7 +321,7 @@ header .nav__list ul li a:hover {
 }
 
 .preview__container {
-  width: 910px;
+  max-width: 910px;
   min-height: 422px;
   padding: 32px 0 0 120px;
   font-family: 'Aleo';
@@ -413,13 +413,6 @@ header .nav__list ul li a:hover {
   font-size: 20px;
   line-height: 24px;
   color: #0D606F;
-}
-
-.steps__calendar-special {
-  position: absolute;
-  top: 97px;
-  left: 50%;
-  transform: translate(-50%, 50%);
 }
 
 .destinations {
@@ -558,4 +551,223 @@ header .nav__list ul li a:hover {
 
 .footer__add_img {
   height: 45px;
+}
+
+/* @media(max-width: 1260px) {
+    header {
+        .nav {
+            padding: 0 30px;
+            &__logo {
+                font-size: 23px;
+            }
+            &__list {
+                ul {
+                    li {
+                        padding-right: 20px;
+                        a {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .stories {
+        &__wrapper {
+            background-size: cover;
+        }
+        &__items {
+            padding-bottom: 15px;
+        }
+    }
+}
+
+@media(max-width: 1090px) {
+    .preview {
+        &__container {
+            padding: 32px 20px 0;
+        }
+        &__search {
+            input {
+                width: 100%;
+            }
+            .btn {
+                right: 20px;
+            }
+        }
+    }
+    .steps {
+        &__container {
+            min-height: 350px;
+            .title {
+                padding-top: 40px;
+            }
+        }
+        &__items {
+            padding: 40px 10px 0;
+        }
+        &__item {
+            width: 210px;
+        }
+    }
+    .stories {
+        &__items {
+            padding: 10px 20px 40px;
+        }
+    }
+    .footer {
+        &__container {
+            padding: 0 20px;
+        }
+        .rights {
+            margin-left: 10px;
+        }
+    }
+}
+
+@media (max-width: 769px) {
+    .btn {
+        width: 92px;
+        height: 30px;
+        button {
+            font-size: 11px;
+            line-height: 15px;
+            padding: 9px;
+        }
+    }
+    header {
+        .nav {
+            background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
+            &__logo p,
+            &__list,
+            .btn {
+                display: none;
+            }
+        }
+    }
+    .preview {
+        min-height: 176px;
+        &__container {
+            min-height: 176px;
+            h1,
+            p {
+                display: none;
+            }
+        }
+        &__search {
+            padding-top: 15px;
+        }
+    }
+}
+ */
+@media (max-width: 391px) {
+  .btn {
+    width: 92px;
+    height: 30px;
+  }
+  .btn button {
+    font-size: 11px;
+    line-height: 15px;
+    padding: 7.5px 9px;
+  }
+  .title {
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 19px;
+  }
+  header {
+    height: 75px;
+  }
+  header .nav__logo p,
+  header .nav__list,
+  header .btn {
+    display: none;
+  }
+  header .container {
+    border-radius: 30px 30px 0 0;
+    background-image: url("../img/background-header-min.jpg");
+  }
+  header .nav {
+    border-radius: 30px 30px 0 0;
+    padding: 38px 15px 0px;
+    background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
+    box-shadow: none;
+  }
+  main .preview {
+    min-height: 176px;
+    background-image: url(../img/background-header-min.jpg);
+    background-repeat: no-repeat;
+    background-position: center calc(-1 *75px);
+  }
+  main .preview__container {
+    padding: 0;
+    min-height: 176px;
+  }
+  main .preview__container h1,
+  main .preview__container p {
+    display: none;
+  }
+  main .preview__search {
+    padding: 68px 0 0 14px;
+  }
+  main .preview__search input {
+    padding: 22px 0 21px 17px;
+    width: 360px;
+    height: 48px;
+    font-family: 'Aleo';
+    font-size: 14px;
+    line-height: 17px;
+  }
+  main .preview__search .btn {
+    right: 25px;
+    top: 76px;
+  }
+  main .steps__container {
+    min-height: 170px;
+  }
+  main .steps .title {
+    padding-top: 20px;
+  }
+  main .steps__items {
+    padding: 20px 15px 0;
+  }
+  main .steps__item {
+    width: 111px;
+    padding: 0;
+  }
+  main .steps__item_icon {
+    width: 70px;
+    height: 70px;
+  }
+  main .steps__item_icon img {
+    width: 35px;
+    height: 40px;
+  }
+  main .steps__item p {
+    padding-top: 21px;
+    font-size: 10px;
+    line-height: 12px;
+  }
+  main .steps__item:nth-child(1) {
+    text-align: left;
+  }
+  main .steps__item:nth-child(1) .steps__item_icon {
+    margin: 0;
+  }
+  main .steps__item:nth-child(1) p {
+    padding-right: 15px;
+  }
+  main .steps__item:nth-child(3) {
+    text-align: right;
+  }
+  main .steps__item:nth-child(3) .steps__item_icon {
+    margin-right: 0;
+  }
+  main .destinations {
+    min-height: 289px;
+  }
+  main .destinations .my__slider {
+    padding-top: 19px;
+    height: 228px;
+  }
 }
