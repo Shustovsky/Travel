@@ -276,6 +276,7 @@
     .stories {
         &__wrapper {
             background-image: url('../img/background-footer-min.jpg');
+            background-size: cover;
         }
         &__container {
             padding-top: 1px;
