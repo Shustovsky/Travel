@@ -1,4 +1,7 @@
-/* @media(max-width: 1260px) {
+@media(max-width: 1260px) {
+    .container {
+        max-width: 1091px;
+    }
     header {
         .nav {
             padding: 0 30px;
@@ -83,11 +86,6 @@
     header {
         .nav {
             background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
-            &__logo p,
-            &__list,
-            .btn {
-                display: none;
-            }
         }
     }
     .preview {
@@ -104,9 +102,8 @@
         }
     }
 }
- */
 
-@media (max-width: 391px) {
+@media (max-width: 700px) {
     .btn {
         width: 92px;
         height: 30px;
@@ -315,11 +312,12 @@
         }
     }
     .footer {
-        background-image: url('../img/background-footer-min.jpg');
-        background-position: center calc(-1 * 630px);
-        border-radius: 0 0 30px 30px;
         &__container {
-            padding: 13px 120px 0 131px;
+            background-image: url('../img/background-footer-min.jpg');
+            background-position: center calc(-1 * 630px);
+            border-radius: 0 0 30px 30px;
+            padding: 5px 120px 0 131px;
+            height: 61px;
         }
         &__add,
         .rights {

@@ -1,9 +1,9 @@
 .footer {
     height: 61px;
-    background-image: url('../img/background-footer.jpg');
-    background-repeat: no-repeat;
-    background-position: center calc(-1 * 1270px);
     &__container {
+        background-image: url('../img/background-footer.jpg');
+        background-repeat: no-repeat;
+        background-position: center calc(-1 * 1270px);
         display: flex;
         justify-content: space-between;
         align-items: center;
