@@ -143,6 +143,11 @@
             box-shadow: none;
             &__burger {
                 display: flex;
+                &__menu {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                }
             }
         }
     }
