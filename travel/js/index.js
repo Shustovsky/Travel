@@ -16,3 +16,15 @@ burgerList.addEventListener('click', function() {
         burgerMenu.classList.toggle('burger__menu-active');
     })
     //////////////////////////////////////////////////////////////
+
+let buttonPopup = document.querySelector('.btn_popup');
+let popup = document.querySelector('.popup');
+let popupSign = document.querySelector('.popup_sign');
+
+
+buttonPopup.addEventListener('click', function() {
+    popup.classList.toggle('popup-active');
+})
+popupSign.addEventListener('click', function() {
+    popup.classList.toggle('popup-active');
+})
