@@ -11,43 +11,60 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Aleo:ital,wght@0,400;0,700;1,400;1,700&family=Magra&family=Red+Hat+Text:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
     <div class="popup">
-        <h3 class="popup_title">Log in to your account</h3>
-        <div class="popup__buttons">
-            <button class="btn-popup"><img src="icons/facebook.svg" alt="facebook_logo"> Sign In with Facebook</button>
-            <button class="btn-popup btn-popup-white"><img src="icons/google.svg" alt="facebook_google"> Sign In with Google</button>
-        </div>
-        <div class="popup_divider">
-            <span>or</span>
-        </div>
-        <div class="popup__input">
-            <p>E-mail</p>
-            <input type="text">
-        </div>
-        <div class="popup__input">
-            <p>Password</p>
-            <input type="password">
-        </div>
-        <div class="popup_sign">
-            <button class="btn-popup btn-popup-green">Sign In</button>
-        </div>
-        <div class="popup_forget">
-            <a href="#">Forgot Your Password?</a>
-        </div>
-        <div class="popup_divider-second"></div>
-        <div class="popup_register">
-            Don’t have an account? <a href="#">Register</a>
+        <div class="popup_wrapper">
+            <h3 class="popup_title">Log in to your account</h3>
+            <div class="popup__buttons">
+                <button class="btn-popup"><img src="icons/facebook.svg" alt="facebook_logo"> Sign In with Facebook</button>
+                <button class="btn-popup btn-popup-white"><img src="icons/google.svg" alt="facebook_google"> Sign In with Google</button>
+            </div>
+            <div class="popup_divider">
+                <span>or</span>
+            </div>
+            <div class="popup__input">
+                <p>E-mail</p>
+                <input type="text">
+            </div>
+            <div class="popup__input">
+                <p>Password</p>
+                <input type="password">
+            </div>
+            <div class="popup_sign">
+                <button class="btn-popup btn-popup-green">Sign In</button>
+            </div>
+            <div class="popup_forget">
+                <a href="#">Forgot Your Password?</a>
+            </div>
+            <div class="popup_divider-second"></div>
+            <div class="popup_register">
+                Don’t have an account? <a href="#">Register</a>
+            </div>
         </div>
     </div>
 
     <header>
         <div class="container">
+            <div class="burger__menu">
+                <div class="burger__menu_close">
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="burger__menu_list">
+                    <ul>
+                        <li><a href="#preview">How It Works</a></li>
+                        <li><a href="#steps">Plan Your Trip</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#stories">Travel Stories</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#social">Social Media</a></li>
+                    </ul>
+                </div>
+            </div>
             <nav class="nav">
                 <div class="nav__logo">
                     <img src="icons/logo.svg" alt="logo">
@@ -61,10 +78,16 @@
                         <li><a href="#stories">Travel Stories</a></li>
                     </ul>
                 </div>
-                <div class="btn btn-small">
+                <div class="btn btn-small btn_popup">
                     <button>Login</button>
                 </div>
+                <div class="nav__burger">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
             </nav>
+
         </div>
     </header>
     <main>
@@ -93,33 +116,48 @@
                         </div>
                         <div class="steps__item">
                             <div class="steps__item_icon">
+                                <img src="icons/calendar.svg" alt="icon calendar">
+                            </div>
+                            <p>Share us preferable dates </p>
+                        </div>
+                        <div class="steps__item">
+                            <div class="steps__item_icon">
                                 <img src="icons/air.svg" alt="icon air">
                             </div>
                             <p>We will give you recommendations</p>
                         </div>
                     </div>
-                    <div class="steps__item steps__calendar-special">
-                        <div class="steps__item_icon">
-                            <img src="icons/calendar.svg" alt="icon calendar">
-                        </div>
-                        <p>Share us preferable dates </p>
-                    </div>
+
                 </div>
             </section>
             <section class="destinations" id="destinations">
                 <h2 class="title">POPULAR DESTINATIONS</h2>
-                <div class="my__slider">
-                    <div><img src="img/carousel/gates.jpg" alt="gates"></div>
-                    <div><img src="img/carousel/bridge.jpg" alt="bridge"></div>
-                    <div><img src="img/carousel/rocks.jpg" alt="rocks"></div>
+                <div class="destinations__slider">
+                    <div class="destinations__slider__item">
+                        <img srcset="img/carousel/rocks-min.jpg 400w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
+                        <p>spain</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/gates-min.jpg 400w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates">
+                        <p>japan</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/bridge-min.jpg 400w, img/carousel/bridge.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " src="img/carousel/bridge.jpg" alt="bridge">
+                        <p>usa</p>
+                    </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/rocks-min.jpg 400w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
+                        <p>spain</p>
+                    </div>
                 </div>
-                <div class="my__slider_btn">
-                    <button></button>
-                    <button></button>
-                    <button></button>
+                <div class="destinations__slider_btns">
+                    <button class="destinations__slider_btn"></button>
+                    <button class="destinations__slider_btn destinations__slider_btn-active"></button>
+                    <button class="destinations__slider_btn"></button>
                 </div>
+                <div class="destinations__slider_arrow destinations__slider_arrow-left"></div>
+                <div class="destinations__slider_arrow destinations__slider_arrow-right destinations__slider_arrow-active"></div>
                 <div class="btn btn-arrow">
-                    <button><img src="icons/arrow-right.svg" alt="arrow-right"><span>Find More</span></button>
+                    <button><img srcset="icons/arrow-right-small.svg 400w, icons/arrow-right.svg 800w"
+                        sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " 
+                        src="icons/arrow-right.svg" alt="arrow-right"><span>Find More</span></button>
                 </div>
             </section>
             <section class="stories" id="stories" lang="zxx">
@@ -129,50 +167,48 @@
                         <div class="stories__items">
                             <div class="stories__item">
                                 <div class="stories__item_img">
-                                    <img src="img/boat.jpg" alt="Thailand">
+                                    <img srcset="img/boat-min.jpg 400w, img/boat.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px" src="img/boat.jpg" alt="Thailand">
                                 </div>
                                 <div class="stories__item_dscr">
                                     <h3>10 Photos of Attractive Thailand</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#">Read More</a></p>
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <span class="not_show">occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span>                                        <a href="#">Read More</a></p>
                                 </div>
                             </div>
                             <div class="stories__item">
                                 <div class="stories__item_img">
-                                    <img src="img/road.jpg" alt="National Par">
+                                    <img srcset="img/road-min.jpg 400w, img/road.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px" src="img/road.jpg" alt="National Par">
                                 </div>
                                 <div class="stories__item_dscr">
                                     <h3>Canyonlands National Park, Utah</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#">Read More</a></p>
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <span class="not_show">occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span>                                        <a href="#">Read More</a></p>
                                 </div>
                             </div>
                             <div class="stories__item">
                                 <div class="stories__item_img">
-                                    <img src="img/mountain.jpg" alt="the Mountains!">
+                                    <img srcset="img/mountain-min.jpg 400w, img/mountain.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px" src="img/mountain.jpg" alt="the Mountains!">
                                 </div>
                                 <div class="stories__item_dscr">
                                     <h3>I left my heart in the Mountains!</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#">Read More</a></p>
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <span class="not_show">occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span>                                        <a href="#">Read More</a></p>
                                 </div>
                             </div>
                             <div class="stories__item">
                                 <div class="stories__item_img">
-                                    <img src="img/car.jpg" alt="Car">
+                                    <img srcset="img/car-min.jpg 400w, img/car.jpg 800w" sizes="(max-width: 799px) 400px, (min-width: 800px) 800px" src="img/car.jpg" alt="Car">
                                 </div>
                                 <div class="stories__item_dscr">
                                     <h3>The Longest journey in my life!</h3>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-                                        est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit... <a href="#">Read More</a></p>
+                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint <span class="not_show">occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit...</span>                                        <a href="#">Read More</a></p>
                                 </div>
                             </div>
                             <div class="btn btn-arrow">
-                                <button><img src="icons/arrow-right.svg" alt="arrow-right"><span>See More</span></button>
+                                <button><img srcset="icons/arrow-right-small.svg 400w, icons/arrow-right.svg 800w"
+                                    sizes="(max-width: 799px) 400px, (min-width: 800px) 800px " 
+                                    src="icons/arrow-right.svg" alt="arrow-right"><span>See More</span></button>
                             </div>
                         </div>
                     </div>
@@ -190,7 +226,7 @@
                 <div class="rights">
                     All Rights Reserved © Travel Portal
                 </div>
-                <div class="social">
+                <div class="social" id="social">
                     <ul class="social__list">
                         <li>
                             <a href="#"><img src="icons/insta.svg" alt="instagram"></a>
@@ -206,7 +242,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+
     <script src="js/index.js"></script>
 </body>
 

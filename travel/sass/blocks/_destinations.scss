@@ -1,22 +1,71 @@
 .destinations {
-    min-height: 1069px;
+    max-height: 1069px;
     background-color: #ffffff;
-    .my__slider {
-        padding-top: 46px;
-        &_btn {
+    overflow: hidden;
+    /*  &__item {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        } */
+    &__slider {
+        padding-top: 45px;
+        display: flex;
+        gap: 60px;
+        position: relative;
+        right: 540px;
+        min-width: 3440px;
+        max-height: 850px;
+        width: 92vw;
+        &__item {
+            p {
+                position: relative;
+                bottom: 87px;
+                left: 14px;
+                font-family: 'Red Hat Text';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 42px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+            }
+        }
+        &_btns {
             text-align: center;
             padding-top: 19px;
-            button {
-                width: 20px;
-                height: 20px;
-                background: rgba(242, 120, 92, 0.5);
-                border-radius: 100%;
-                border: none;
-                cursor: pointer;
-                margin: 0 3px;
-            }
-            .tns-nav-active {
+        }
+        &_btn {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: rgba(242, 120, 92, 0.5);
+            border-radius: 100%;
+            border: none;
+            margin: 0 3px;
+            &-active {
                 background: #F2785C;
+            }
+        }
+        &_arrow {
+            display: none;
+            position: relative;
+            bottom: 122px;
+            width: 19px;
+            height: 19px;
+            border-top: 4px solid rgba(242, 120, 92, 0.5);
+            border-right: 4px solid rgba(242, 120, 92, 0.5);
+            &-left {
+                transform: rotate(-135deg);
+                left: 7vw;
+            }
+            &-right {
+                transform: rotate(45deg);
+                left: 81vw;
+            }
+            &-active {
+                border-color: #F2785C;
             }
         }
     }
