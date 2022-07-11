@@ -803,7 +803,7 @@ header .burger__menu-active {
   }
   .btn-arrow button {
     gap: 6px;
-    padding: 7.5px 6px;
+    padding: 7.5px 11px;
   }
   .title {
     padding-top: 20px;
