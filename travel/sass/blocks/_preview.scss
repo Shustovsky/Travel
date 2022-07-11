@@ -4,7 +4,7 @@
     background-repeat: no-repeat;
     background-position: center calc(-1 * 90px);
     &__container {
-        width: 910px;
+        max-width: 910px;
         min-height: 422px;
         padding: 32px 0 0 120px;
         font-family: 'Aleo';

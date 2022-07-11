@@ -22,6 +22,7 @@ body {
 .container {
     margin: 0 auto;
     max-width: 1440px;
+    position: relative;
 }
 
 @import "blocks/buttons";
@@ -33,3 +34,4 @@ body {
 @import "blocks/destinations";
 @import "blocks/stories";
 @import "blocks/footer";
+@import "blocks/media";

@@ -1,15 +1,15 @@
 .footer {
     height: 61px;
-    background-image: url('../img/background-footer.jpg');
-    background-repeat: no-repeat;
-    background-position: center calc(-1 * 1270px);
     &__container {
+        background-image: url('../img/background-footer.jpg');
+        background-repeat: no-repeat;
+        background-position: center calc(-1 * 1270px);
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 0 121px;
         .rights {
-            padding-right: 51px;
+            padding-right: 111px;
             font-family: 'Red Hat Text';
             font-style: normal;
             font-weight: 500;
