@@ -831,11 +831,6 @@ header .burger__menu-active {
   header .nav__burger {
     display: flex;
   }
-  header .nav__burger__menu {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
   main .preview {
     min-height: 176px;
     background-image: url("../img/background-header-min.jpg");
