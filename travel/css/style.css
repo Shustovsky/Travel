@@ -964,7 +964,7 @@ header .burger__menu-active {
     padding: 9px 15px 0;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 14px;
   }
   .stories__items .btn {
     margin-top: -5px;
@@ -973,6 +973,15 @@ header .burger__menu-active {
     gap: 10px;
     min-height: 130px;
     margin-top: 1px;
+  }
+  .stories__item_img {
+    width: 155px;
+    height: 130px;
+  }
+  .stories__item_img img {
+    min-width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   .stories__item_dscr h3 {
     margin-top: 5px;
@@ -987,6 +996,9 @@ header .burger__menu-active {
   }
   .stories__item_dscr p .not_show {
     display: none;
+  }
+  .stories button {
+    padding: 8.5px 0 0 16px;
   }
   .footer__container {
     background-image: url("../img/background-footer-min.jpg");

@@ -284,7 +284,7 @@
             padding: 9px 15px 0;
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 14px;
             .btn {
                 margin-top: -5px;
             }
@@ -293,6 +293,15 @@
             gap: 10px;
             min-height: 130px;
             margin-top: 1px;
+            &_img {
+                width: 155px;
+                height: 130px;
+                img {
+                    min-width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+            }
             &_dscr {
                 h3 {
                     margin-top: 5px;
@@ -309,6 +318,9 @@
                     }
                 }
             }
+        }
+        button {
+            padding: 8.5px 0 0 16px;
         }
     }
     .footer {
