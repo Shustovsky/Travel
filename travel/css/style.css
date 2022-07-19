@@ -112,20 +112,6 @@ body {
 }
 
 .popup {
-  transform: translateY(-140%);
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: rgba(0, 0, 0, 0.25);
-  transition: transform 0.5s;
-}
-
-.popup-active {
-  transform: translateY(0);
-}
-
-.popup_wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -136,6 +122,20 @@ body {
   background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 16px;
+}
+
+.popup_wrapper {
+  transform: translateY(-140%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.25);
+  transition: transform 0.5s;
+}
+
+.popup_wrapper-active {
+  transform: translateY(0);
 }
 
 .popup_title {
@@ -341,16 +341,20 @@ header .nav__burger div {
   background: #FFFFFF;
 }
 
-header .burger__menu {
+header .burger_wrapper {
   transform: translateX(101%);
   position: fixed;
   top: 0;
   right: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.25);
   z-index: 1;
   transition: transform 0.5s;
+  background: rgba(0, 0, 0, 0.25);
+}
+
+header .burger_wrapper-active {
+  transform: translateX(0);
 }
 
 header .burger__menu_list {
@@ -387,8 +391,8 @@ header .burger__menu_list ul li a {
 header .burger__menu_close {
   z-index: 2;
   position: relative;
-  top: 5%;
-  left: 60%;
+  bottom: 209px;
+  left: -8px;
   cursor: pointer;
 }
 
@@ -401,10 +405,6 @@ header .burger__menu_close div {
 
 header .burger__menu_close div:last-child {
   transform: rotate(45deg) translate(-8%, -75%);
-}
-
-header .burger__menu-active {
-  transform: translateX(0);
 }
 
 .preview {

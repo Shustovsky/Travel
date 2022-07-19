@@ -3,9 +3,9 @@
 
 console.log(``);
 
-////////////////---------BURGER---------/////////////
+////////////////---------BURGER old---------/////////////
 
-let navBurger = document.querySelector('.nav__burger');
+/* let navBurger = document.querySelector('.nav__burger');
 let burgerMenu = document.querySelector('.burger__menu');
 
 const toggleMenu = () => {
@@ -27,9 +27,61 @@ document.addEventListener('click', e => {
     if (!its_menu && !its_burger && menu_is_active) {
         toggleMenu();
     }
+}) */
+
+////////////////---------BURGER new---------/////////////
+let burgerWrapper = document.querySelector('.burger_wrapper');
+let burger = document.querySelector('.burger__menu');
+let burgerBtn = document.querySelectorAll('.nav__burger');
+let burgerClose = document.querySelector('.burger__menu_close');
+let burgerLink = document.querySelectorAll('.burger__menu_list_item');
+
+burgerBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        burgerWrapper.classList.add('burger_wrapper-active');
+    })
+})
+
+burgerLink.forEach((button) => {
+    button.addEventListener('click', (e) => {
+
+        burgerWrapper.classList.remove('burger_wrapper-active');
+    })
+})
+
+burgerClose.addEventListener('click', () => {
+    burgerWrapper.classList.remove('burger_wrapper-active');
 })
 
 
+document.addEventListener('click', (e) => {
+    if (e.target === burgerWrapper) {
+        burgerWrapper.classList.remove('burger_wrapper-active')
+    }
+})
+
+
+
+////////////////---------POPUP---------/////////////
+
+let popupWrapper = document.querySelector('.popup_wrapper'); // Фон попап окна
+let popup = document.querySelector('.popup'); // Само окно
+let popupBtn = document.querySelectorAll('.btn_popup'); // Кнопки для показа окна
+
+
+popupBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupWrapper.classList.add('popup_wrapper-active');
+    })
+})
+
+document.addEventListener('click', (e) => {
+    if (e.target === popupWrapper) {
+        popupWrapper.classList.remove('popup_wrapper-active')
+    }
+})
 
 
 //////////////-----------SLIDER-----------////////////////////
