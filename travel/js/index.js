@@ -3,6 +3,7 @@
 
 console.log(``);
 
+////////////////---------BURGER---------/////////////
 
 let navBurger = document.querySelector('.nav__burger');
 let burgerMenu = document.querySelector('.burger__menu');
@@ -26,68 +27,6 @@ document.addEventListener('click', e => {
     if (!its_menu && !its_burger && menu_is_active) {
         toggleMenu();
     }
-})
-
-///////////////////////////////////////////////////////
-// let navBurger = document.querySelector('.nav__burger');
-// let burgerMenu = document.querySelector('.burger__menu');
-// let burgerClose = document.querySelector('.burger__menu_close')
-// let burgerList = document.querySelector('.burger__menu_list')
-
-// navBurger.addEventListener('click', function() {
-//     burgerMenu.classList.toggle('burger__menu-active');
-// });
-// burgerClose.addEventListener('click', function() {
-//     burgerMenu.classList.toggle('burger__menu-active');
-// });
-// burgerList.addEventListener('click', function() {
-//     burgerMenu.classList.toggle('burger__menu-active');
-// });
-// burgerMenu.addEventListener('click', function() {
-//     if ('burger__menu-active' === true) {
-//         burgerMenu.classList.toggle('burger__menu-active');
-
-//     }
-// });
-
-
-//////////////////////////////////////////////////////////////
-
-// let buttonPopup = document.querySelector('.btn_popup');
-// let popup = document.querySelector('.popup');
-
-// const toggleMenuPopup = () => {
-//     popup.classList.toggle('popup-active');
-// }
-
-// buttonPopup.addEventListener('click', e => {
-//     e.stopPropagation();
-
-//     toggleMenuPopup();
-// });
-
-// document.addEventListener('click', e => {
-//     let target = e.target;
-//     let its_menu = target == popup || popup.contains(target);
-//     let its_burger = target == buttonPopup;
-//     let menu_is_active = popup.classList.toggle('popup-active');
-
-//     if (!its_menu && !its_burger && menu_is_active) {
-//         toggleMenuPopup();
-//     }
-// })
-
-
-let buttonPopup = document.querySelector('.btn_popup');
-let popup = document.querySelector('.popup');
-let popupSign = document.querySelector('.popup_sign');
-
-
-buttonPopup.addEventListener('click', function() {
-    popup.classList.toggle('popup-active');
-})
-popupSign.addEventListener('click', function() {
-    popup.classList.toggle('popup-active');
 })
 
 

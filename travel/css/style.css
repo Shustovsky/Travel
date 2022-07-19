@@ -571,27 +571,15 @@ header .burger__menu-active {
 }
 
 .destinations__slider_arrow {
-  display: none;
+  display: inline-block;
   position: relative;
-  bottom: 122px;
-  width: 19px;
-  height: 19px;
-  border-top: 4px solid rgba(242, 120, 92, 0.5);
-  border-right: 4px solid rgba(242, 120, 92, 0.5);
-}
-
-.destinations__slider_arrow-left {
-  transform: rotate(-135deg);
-  left: 7vw;
+  bottom: 848px;
+  width: 260px;
+  height: 800px;
 }
 
 .destinations__slider_arrow-right {
-  transform: rotate(45deg);
-  left: 81vw;
-}
-
-.destinations__slider_arrow-active {
-  border-color: #F2785C;
+  left: 64%;
 }
 
 .stories__container {
@@ -952,7 +940,22 @@ header .burger__menu-active {
     margin: 0;
   }
   main .destinations__slider_arrow {
-    display: inline-block;
+    bottom: 122px;
+    width: 19px;
+    height: 19px;
+    border-top: 4px solid rgba(242, 120, 92, 0.5);
+    border-right: 4px solid rgba(242, 120, 92, 0.5);
+  }
+  main .destinations__slider_arrow-left {
+    transform: rotate(-135deg);
+    left: 7vw;
+  }
+  main .destinations__slider_arrow-right {
+    transform: rotate(45deg);
+    left: 81vw;
+  }
+  main .destinations__slider_arrow-active {
+    border-color: #F2785C;
   }
   .stories__wrapper {
     background-image: url("../img/background-footer-min.jpg");

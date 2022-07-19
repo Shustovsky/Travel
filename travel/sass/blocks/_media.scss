@@ -270,7 +270,22 @@
                     // }
                 }
                 &_arrow {
-                    display: inline-block;
+                    bottom: 122px;
+                    width: 19px;
+                    height: 19px;
+                    border-top: 4px solid rgba(242, 120, 92, 0.5);
+                    border-right: 4px solid rgba(242, 120, 92, 0.5);
+                    &-left {
+                        transform: rotate(-135deg);
+                        left: 7vw;
+                    }
+                    &-right {
+                        transform: rotate(45deg);
+                        left: 81vw;
+                    }
+                    &-active {
+                        border-color: #F2785C;
+                    }
                 }
             }
         }
