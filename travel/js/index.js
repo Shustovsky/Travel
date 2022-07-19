@@ -67,10 +67,11 @@ document.addEventListener('click', (e) => {
 
 let popupWrapper = document.querySelector('.popup_wrapper'); // Фон попап окна
 let popup = document.querySelector('.popup'); // Само окно
-let popupBtn = document.querySelectorAll('.btn_popup'); // Кнопки для показа окна
+let popupLogin = document.querySelectorAll('.login_btn'); // Кнопки для показа окна
+let popupBtn = document.querySelectorAll('.btn-popup');
 
 
-popupBtn.forEach((button) => {
+popupLogin.forEach((button) => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         popupWrapper.classList.add('popup_wrapper-active');
@@ -81,6 +82,13 @@ document.addEventListener('click', (e) => {
     if (e.target === popupWrapper) {
         popupWrapper.classList.remove('popup_wrapper-active')
     }
+})
+
+popupBtn.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        e.preventDefault();
+        popupWrapper.classList.remove('popup_wrapper-active');
+    })
 })
 
 
