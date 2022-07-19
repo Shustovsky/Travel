@@ -1,21 +1,7 @@
-console.log(`Вёрстка соответствует макету. Ширина экрана 390px +48
-блок <header> +6
-секция preview +9
-секция steps +9
-секция destinations +9
-секция stories +9
-блок <footer> +6
-Ни на одном из разрешений до 320px включительно не появляется горизонтальная полоса прокрутки. Весь контент страницы при этом сохраняется: не обрезается и не удаляется +15
-нет полосы прокрутки при ширине страницы от 1440рх до 390px +7
-нет полосы прокрутки при ширине страницы от 390px до 320рх +8
-На ширине экрана 390рх и меньше реализовано адаптивное меню +22
-при ширине страницы 390рх панель навигации скрывается, появляется бургер-иконка +2
-при нажатии на бургер-иконку плавно появляется адаптивное меню +4
-адаптивное меню соответствует макету +4
-при нажатии на крестик адаптивное меню плавно скрывается уезжая за экран +4
-ссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям +4 (все кроме Account, она пока что просто закрывает меню)
-при клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, также скрытие меню происходит если сделать клик вне данного окна +4
-`);
+'use strict'
+
+
+console.log(``);
 
 
 let navBurger = document.querySelector('.nav__burger');
@@ -103,3 +89,67 @@ buttonPopup.addEventListener('click', function() {
 popupSign.addEventListener('click', function() {
     popup.classList.toggle('popup-active');
 })
+
+
+
+
+//////////////-----------SLIDER-----------////////////////////
+
+
+const slider = document.querySelector('.destinations__slider');
+
+const left = document.querySelector('.destinations__slider_arrow-left');
+const right = document.querySelector('.destinations__slider_arrow-right');
+
+const indicatorParent = document.querySelector('.destinations__slider_btns');
+
+let index = 0;
+
+let value;
+
+if (document.documentElement.clientWidth > 700) {
+    value = -59.5;
+} else {
+    value = -95.8;
+};
+
+left.addEventListener('click', function() {
+    index = (index > 0) ? index - 1 : 0;
+    document.querySelector('.destinations__slider_btns .destinations__slider_btn-active').classList.remove('destinations__slider_btn-active');
+    indicatorParent.children[index].classList.add('destinations__slider_btn-active');
+    slider.style.transform = 'translate(' + (index) * value + 'vw)';
+
+    if (index !== 0) {
+        document.querySelector('.destinations__slider_arrow-left').classList.add('destinations__slider_arrow-active');
+        document.querySelector('.destinations__slider_arrow-right').classList.add('destinations__slider_arrow-active');
+    } else {
+        document.querySelector('.destinations__slider_arrow-left').classList.remove('destinations__slider_arrow-active');
+    }
+
+});
+
+right.addEventListener('click', function() {
+    index = (index < 2) ? index + 1 : 2;
+    document.querySelector('.destinations__slider_btns .destinations__slider_btn-active').classList.remove('destinations__slider_btn-active');
+    indicatorParent.children[index].classList.add('destinations__slider_btn-active');
+    slider.style.transform = 'translate(' + (index) * value + 'vw)';
+
+    if (index !== 2) {
+        document.querySelector('.destinations__slider_arrow-right').classList.add('destinations__slider_arrow-active');
+        document.querySelector('.destinations__slider_arrow-left').classList.add('destinations__slider_arrow-active');
+    } else {
+        document.querySelector('.destinations__slider_arrow-right').classList.remove('destinations__slider_arrow-active');
+    }
+
+});
+
+document.querySelectorAll('.destinations__slider_btn').forEach(function(indicator, ind) {
+    indicator.addEventListener('click', function() {
+        index = ind;
+
+        document.querySelector('.destinations__slider_btns .destinations__slider_btn-active').classList.remove('destinations__slider_btn-active');
+
+        indicator.classList.add('destinations__slider_btn-active');
+        slider.style.transform = 'translate(' + (index) * value + 'vw)';
+    });
+});
