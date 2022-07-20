@@ -18,8 +18,12 @@
         min-width: 3440px;
         max-height: 850px;
         width: 92vw;
+        transition: all ease 1s;
         &__item {
-            p {
+            // &_img {
+            //     width: 100%;
+            // }
+            &_dscr {
                 position: relative;
                 bottom: 87px;
                 left: 14px;
@@ -49,23 +53,13 @@
             }
         }
         &_arrow {
-            display: none;
+            display: inline-block;
             position: relative;
-            bottom: 122px;
-            width: 19px;
-            height: 19px;
-            border-top: 4px solid rgba(242, 120, 92, 0.5);
-            border-right: 4px solid rgba(242, 120, 92, 0.5);
-            &-left {
-                transform: rotate(-135deg);
-                left: 7vw;
-            }
+            bottom: 848px;
+            width: 260px;
+            height: 800px;
             &-right {
-                transform: rotate(45deg);
-                left: 81vw;
-            }
-            &-active {
-                border-color: #F2785C;
+                left: 64%;
             }
         }
     }
