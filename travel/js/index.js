@@ -84,10 +84,16 @@ document.querySelector('.popup_sign').addEventListener('click', welcome);
 //Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25
 
 let register = document.querySelector('.popup_register_link');
+let login = document.querySelector('.popup_login_link');
 
 document.addEventListener('click', (e) => {
     if (e.target === register) {
         popup.classList.add('popup-create');
+    }
+});
+document.addEventListener('click', (e) => {
+    if (e.target === login) {
+        popup.classList.remove('popup-create');
     }
 });
 
