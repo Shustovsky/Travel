@@ -9,6 +9,7 @@
     background: linear-gradient(177.09deg, #FFFFFF 6.15%, #0D606F 202.69%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 16px;
+    transition: all ease 1s;
     &_wrapper {
         transform: translateY(-140%);
         position: fixed;
@@ -29,6 +30,9 @@
         font-size: 32px;
         line-height: 38px;
         color: #0D606F;
+        &-create {
+            display: none;
+        }
     }
     &__buttons {
         padding-top: 30px;
@@ -92,6 +96,9 @@
     }
     &_sign {
         padding-top: 16px;
+        .btn-popup-sign {
+            display: none;
+        }
     }
     &_forget {
         padding-top: 10px;
@@ -115,7 +122,8 @@
         border: 1px solid rgba(13, 96, 111, 0.5);
         transform: rotate(0.1deg);
     }
-    &_register {
+    &_register,
+    &_register_already {
         padding-top: 20px;
         text-align: center;
         font-family: 'Aleo';
@@ -127,6 +135,35 @@
         text-shadow: 0px 2px 3px rgba(255, 255, 255, 0.16);
         a {
             color: #0D606F;
+        }
+    }
+    &_register_already {
+        display: none;
+    }
+    &-create {
+        width: 650px;
+        height: 436px;
+        .popup_title,
+        .popup__buttons,
+        .popup_divider,
+        .popup_forget,
+        .popup_register {
+            display: none;
+        }
+        .popup_title-create {
+            display: block;
+            padding-bottom: 19px;
+        }
+        .popup_register_already {
+            display: block;
+        }
+        .popup_sign {
+            .btn-popup {
+                display: none;
+                &-sign {
+                    display: block;
+                }
+            }
         }
     }
 }

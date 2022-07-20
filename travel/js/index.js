@@ -3,32 +3,6 @@
 
 console.log(``);
 
-////////////////---------BURGER old---------/////////////
-
-/* let navBurger = document.querySelector('.nav__burger');
-let burgerMenu = document.querySelector('.burger__menu');
-
-const toggleMenu = () => {
-    burgerMenu.classList.toggle('burger__menu-active');
-}
-
-navBurger.addEventListener('click', e => {
-    e.stopPropagation();
-
-    toggleMenu();
-});
-
-document.addEventListener('click', e => {
-    let target = e.target;
-    let its_menu = target == burgerMenu || burgerMenu.contains(target);
-    let its_burger = target == navBurger;
-    let menu_is_active = burgerMenu.classList.toggle('burger__menu-active');
-
-    if (!its_menu && !its_burger && menu_is_active) {
-        toggleMenu();
-    }
-}) */
-
 ////////////////---------BURGER new---------/////////////
 let burgerWrapper = document.querySelector('.burger_wrapper');
 let burger = document.querySelector('.burger__menu');
@@ -80,7 +54,8 @@ popupLogin.forEach((button) => {
 
 document.addEventListener('click', (e) => {
     if (e.target === popupWrapper) {
-        popupWrapper.classList.remove('popup_wrapper-active')
+        popupWrapper.classList.remove('popup_wrapper-active');
+        popup.classList.remove('popup-create');
     }
 })
 
@@ -88,9 +63,33 @@ popupBtn.forEach((button) => {
     button.addEventListener('click', (e) => {
         e.preventDefault();
         popupWrapper.classList.remove('popup_wrapper-active');
+        popup.classList.remove('popup-create');
     })
 })
 
+//логин попап имеет 2 инпута (логин и пароль) при нажатии на кнопку Sign In показывается браузерный алерт с введенными данными (для реализации можно использовать тег ) +25
+
+const welcome = () => {
+    let mail = document.querySelector('.mail');
+    let password = document.querySelector('.pass');
+
+    alert(` Welcome bro! Нou have entered the following values:
+    E-mail:  ${mail.value}, 
+    Password: ${password.value}
+    Please keep your data safe!!!`);
+}
+
+document.querySelector('.popup_sign').addEventListener('click', welcome);
+
+//Нажатие на кнопку Register на Login попапе меняет разметку попапа на разметку Sign Up попапа согласно макету (То есть нажатие не закрывает модал а просто меняет его наполнение). +25
+
+let register = document.querySelector('.popup_register_link');
+
+document.addEventListener('click', (e) => {
+    if (e.target === register) {
+        popup.classList.add('popup-create');
+    }
+});
 
 //////////////-----------SLIDER-----------////////////////////
 
