@@ -83,6 +83,30 @@
             padding: 9px;
         }
     }
+    .popup {
+        width: 90%;
+        height: 90%;
+        &_title {
+            font-size: 19px;
+            line-height: 12px;
+        }
+        .btn-popup {
+            font-size: 14px;
+            height: 37px;
+        }
+        .popup_divider {
+            margin-top: 5%;
+            span::after,
+            span::before {
+                width: 120px;
+            }
+        }
+        .popup__input {
+            input {
+                height: 40px;
+            }
+        }
+    }
     header {
         .nav {
             background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);

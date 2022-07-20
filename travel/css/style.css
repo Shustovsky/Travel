@@ -802,6 +802,28 @@ header .burger__menu_close div:last-child {
     line-height: 15px;
     padding: 9px;
   }
+  .popup {
+    width: 90%;
+    height: 90%;
+  }
+  .popup_title {
+    font-size: 19px;
+    line-height: 12px;
+  }
+  .popup .btn-popup {
+    font-size: 14px;
+    height: 37px;
+  }
+  .popup .popup_divider {
+    margin-top: 5%;
+  }
+  .popup .popup_divider span::after,
+  .popup .popup_divider span::before {
+    width: 120px;
+  }
+  .popup .popup__input input {
+    height: 40px;
+  }
   header .nav {
     background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
   }
