@@ -16,9 +16,10 @@
 </head>
 
 <body>
-    <div class="popup">
-        <div class="popup_wrapper">
+    <div class="popup_wrapper">
+        <div class="popup">
             <h3 class="popup_title">Log in to your account</h3>
+            <h3 class="popup_title popup_title-create">Create account</h3>
             <div class="popup__buttons">
                 <button class="btn-popup"><img src="icons/facebook.svg" alt="facebook_logo"> Sign In with Facebook</button>
                 <button class="btn-popup btn-popup-white"><img src="icons/google.svg" alt="facebook_google"> Sign In with Google</button>
@@ -28,41 +29,48 @@
             </div>
             <div class="popup__input">
                 <p>E-mail</p>
-                <input type="text">
+                <input class="mail" type="text">
             </div>
             <div class="popup__input">
                 <p>Password</p>
-                <input type="password">
+                <input class="pass" type="password">
             </div>
             <div class="popup_sign">
                 <button class="btn-popup btn-popup-green">Sign In</button>
+                <button class="btn-popup btn-popup-green btn-popup-sign">Sign UP</button>
             </div>
             <div class="popup_forget">
                 <a href="#">Forgot Your Password?</a>
             </div>
             <div class="popup_divider-second"></div>
             <div class="popup_register">
-                Don’t have an account? <a href="#">Register</a>
+                Don’t have an account? <a href="#" class="popup_register_link">Register</a>
+            </div>
+            <div class="popup_register_already">
+                Already have an account? <a href="#" class="popup_login_link">Log in</a>
             </div>
         </div>
     </div>
 
     <header>
         <div class="container">
-            <div class="burger__menu">
-                <div class="burger__menu_close">
-                    <div></div>
-                    <div></div>
-                </div>
-                <div class="burger__menu_list">
-                    <ul>
-                        <li><a href="#preview">How It Works</a></li>
-                        <li><a href="#steps">Plan Your Trip</a></li>
-                        <li><a href="#destinations">Destinations</a></li>
-                        <li><a href="#stories">Travel Stories</a></li>
-                        <li><a href="#">Account</a></li>
-                        <li><a href="#social">Social Media</a></li>
-                    </ul>
+            <div class="burger_wrapper">
+                <div class="burger__menu">
+
+                    <div class="burger__menu_list">
+                        <ul>
+                            <li class="burger__menu_list_item"><a href="#preview">How It Works</a></li>
+                            <li class="burger__menu_list_item"><a href="#steps">Plan Your Trip</a></li>
+                            <li class="burger__menu_list_item"><a href="#destinations">Destinations</a></li>
+                            <li class="burger__menu_list_item"><a href="#stories">Travel Stories</a></li>
+                            <li class="burger__menu_list_item"><a href="#" class="login_btn">Account</a></li>
+                            <li class="burger__menu_list_item"><a href="#social">Social Media</a></li>
+                        </ul>
+                        <div class="burger__menu_close">
+                            <div></div>
+                            <div></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <nav class="nav">
@@ -78,7 +86,7 @@
                         <li><a href="#stories">Travel Stories</a></li>
                     </ul>
                 </div>
-                <div class="btn btn-small btn_popup">
+                <div class="btn btn-small login_btn">
                     <button>Login</button>
                 </div>
                 <div class="nav__burger">
@@ -134,26 +142,35 @@
                 <h2 class="title">POPULAR DESTINATIONS</h2>
                 <div class="destinations__slider">
                     <div class="destinations__slider__item">
-                        <img srcset="img/carousel/rocks-min.jpg 155w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
-                        <p>spain</p>
+
+                        <img srcset="img/carousel/rocks-min.jpg 155w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks" class="destinations__slider__item_img">
+                        <div class="destinations__slider__item_dscr">spain</div>
                     </div>
-                    <div class="destinations__slider__item"><img srcset="img/carousel/gates-min.jpg 155w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates">
-                        <p>japan</p>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/gates-min.jpg 155w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates" class="destinations__slider__item_img">
+                        <div class="destinations__slider__item_dscr">japan</div>
                     </div>
-                    <div class="destinations__slider__item"><img srcset="img/carousel/bridge-min.jpg 155w, img/carousel/bridge.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/bridge.jpg" alt="bridge">
-                        <p>usa</p>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/bridge-min.jpg 155w, img/carousel/bridge.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/bridge.jpg" alt="bridge" class="destinations__slider__item_img">
+                        <div class="destinations__slider__item_dscr">usa</div>
                     </div>
-                    <div class="destinations__slider__item"><img srcset="img/carousel/rocks-min.jpg 155w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks">
-                        <p>spain</p>
+                    <div class="destinations__slider__item">
+                        <img srcset="img/carousel/rocks-min.jpg 155w, img/carousel/rocks.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/rocks.jpg" alt="rocks" class="destinations__slider__item_img">
+                        <div class="destinations__slider__item_dscr">spain</div>
+
                     </div>
+                    <div class="destinations__slider__item"><img srcset="img/carousel/gates-min.jpg 155w, img/carousel/gates.jpg 800w" sizes="(max-width: 799px) 155px, (min-width: 800px) 800px " src="img/carousel/gates.jpg" alt="gates" class="destinations__slider__item_img">
+                        <div class="destinations__slider__item_dscr">japan</div>
+                    </div>
+
                 </div>
                 <div class="destinations__slider_btns">
-                    <button class="destinations__slider_btn"></button>
                     <button class="destinations__slider_btn destinations__slider_btn-active"></button>
+                    <button class="destinations__slider_btn"></button>
                     <button class="destinations__slider_btn"></button>
                 </div>
                 <div class="destinations__slider_arrow destinations__slider_arrow-left"></div>
                 <div class="destinations__slider_arrow destinations__slider_arrow-right destinations__slider_arrow-active"></div>
+
+
                 <div class="btn btn-arrow">
                     <button><img srcset="icons/arrow-right-small.svg 155w, icons/arrow-right.svg 800w"
                         sizes="(max-width: 799px) 200px, (min-width: 800px) 800px " 

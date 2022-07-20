@@ -83,6 +83,30 @@
             padding: 9px;
         }
     }
+    .popup {
+        width: 90%;
+        height: 90%;
+        &_title {
+            font-size: 19px;
+            line-height: 12px;
+        }
+        .btn-popup {
+            font-size: 14px;
+            height: 37px;
+        }
+        .popup_divider {
+            margin-top: 5%;
+            span::after,
+            span::before {
+                width: 120px;
+            }
+        }
+        .popup__input {
+            input {
+                height: 40px;
+            }
+        }
+    }
     header {
         .nav {
             background: linear-gradient(180deg, #0D606F 0%, rgba(13, 96, 111, 0) 25.1%);
@@ -227,11 +251,16 @@
             &__slider {
                 padding-top: 20px;
                 gap: 15px;
-                right: 0px;
-                left: 15px;
+                right: -15px;
                 height: 230px;
                 &__item {
                     width: 92vw;
+                    &_dscr {
+                        bottom: 206px;
+                        font-weight: 500;
+                        font-size: 20px;
+                        line-height: 26px;
+                    }
                     img {
                         width: 100%;
                         height: 100%;
@@ -260,12 +289,27 @@
                     width: 8px;
                     height: 8px;
                     margin: 0;
-                    &-active {
-                        order: -1;
-                    }
+                    // &-active {
+                    //     order: -1;
+                    // }
                 }
                 &_arrow {
-                    display: inline-block;
+                    bottom: 122px;
+                    width: 19px;
+                    height: 19px;
+                    border-top: 4px solid rgba(242, 120, 92, 0.5);
+                    border-right: 4px solid rgba(242, 120, 92, 0.5);
+                    &-left {
+                        transform: rotate(-135deg);
+                        left: 7vw;
+                    }
+                    &-right {
+                        transform: rotate(45deg);
+                        left: 81vw;
+                    }
+                    &-active {
+                        border-color: #F2785C;
+                    }
                 }
             }
         }
