@@ -1,7 +1,19 @@
 // time & calendar
-
+const date = document.querySelector('.date');
 const time = document.querySelector('.time');
 
-time.textContent = 'text';
+showDate = () => {
+    const fullDate = new Date();
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+    const currentDate = fullDate.toLocaleDateString('en-US', options);
+    date.textContent = currentDate;
+}
 
-console.log(time);
+showTime = () => {
+    const fullDate = new Date();
+    const currentTime = fullDate.toLocaleTimeString();
+    time.textContent = currentTime;
+    setTimeout(showTime, 1000);
+    showDate();
+}
+showTime();
