@@ -1,12 +1,23 @@
 // time & calendar
 const date = document.querySelector('.date');
 const time = document.querySelector('.time');
+
 const greeting = document.querySelector('.greeting');
 const input = document.querySelector('.name');
 const body = document.querySelector('body');
+
 let randomNum;
 const slideNext = document.querySelector('.slide-next');
 const slidePrev = document.querySelector('.slide-prev');
+
+const weatherIcon = document.querySelector('.weather-icon');
+const temperature = document.querySelector('.temperature');
+const weatherDescription = document.querySelector('.weather-description');
+const windSpeed = document.querySelector('.wind');
+const airHumidity = document.querySelector('.humidity');
+const weatherError = document.querySelector('.weather-error');
+
+const city = document.querySelector('.city');
 
 //функция вывода текущей даты 
 showDate = () => {
@@ -48,13 +59,18 @@ showTime();
 
 //функция сохраняющая значение инпута
 function setLocalStorage() {
-    localStorage.setItem('name', input.value);
+    localStorage.setItem('nameInput', input.value);
+    localStorage.setItem('nameCity', city.value || 'Minsk');
 }
 window.addEventListener('beforeunload', setLocalStorage)
+    // window.addEventListener('beforeunload', () => setLocalStorage())
 
 function getLocalStorage() {
-    if (localStorage.getItem('name')) {
-        input.value = localStorage.getItem('name');
+    if (localStorage.getItem('nameInput')) {
+        input.value = localStorage.getItem('nameInput');
+    }
+    if (localStorage.getItem('nameCity')) {
+        city.value = localStorage.getItem('nameCity');
     }
 }
 window.addEventListener('load', getLocalStorage)
@@ -91,3 +107,33 @@ getSlidePrev = () => {
 
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
+
+
+// weather widget
+
+async function getWeather() {
+    try {
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city.value}&lang=en&appid=4e9eb1d279204a03000f5c6c0a887baf&units=metric`;
+        const res = await fetch(url);
+        const data = await res.json();
+        weatherIcon.className = 'weather-icon owf';
+        weatherIcon.classList.add(`owf-${data.weather[0].id}`);
+        temperature.textContent = `${Math.round(data.main.temp)}°C`;
+        weatherDescription.textContent = data.weather[0].description;
+        windSpeed.textContent = `Wind speed: ${Math.round(data.wind.speed)} m/s`;
+        airHumidity.textContent = `Humidity: ${data.main.humidity}%`;
+        weatherError.textContent = ``;
+    } catch (err) {
+        weatherError.textContent = `Error! city not found for '${city.value}'!`;
+        temperature.textContent = ``;
+        windSpeed.textContent = ``;
+        airHumidity.textContent = ``;
+        weatherDescription.textContent = '';
+
+    }
+
+
+    // weatherError.textContent = `Error! city not found for '${city.value}'!`;
+}
+city.addEventListener('change', getWeather);
+window.addEventListener('load', getWeather);
