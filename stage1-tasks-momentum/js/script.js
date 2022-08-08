@@ -16,8 +16,12 @@ const weatherDescription = document.querySelector('.weather-description');
 const windSpeed = document.querySelector('.wind');
 const airHumidity = document.querySelector('.humidity');
 const weatherError = document.querySelector('.weather-error');
-
 const city = document.querySelector('.city');
+
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuote = document.querySelector('.change-quote');
+
 
 //функция вывода текущей даты 
 showDate = () => {
@@ -76,13 +80,13 @@ function getLocalStorage() {
 window.addEventListener('load', getLocalStorage)
 
 //функция возвращает рандомное число от 1 до 20
-getRandomNum = (min = 1, max = 20) => {
-    randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-}
-getRandomNum();
-// функци по рандомному смене фона в зависимости от времени суток и рандомного числа
+getRandomNum = (min, max) => {
+        randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    // функци по рандомному смене фона в зависимости от времени суток и рандомного числа
 
 setBg = () => {
+    getRandomNum(1, 20);
     const timeOfDay = getTimeOfDay();
     const bgNum = (randomNum + '').padStart(2, '0');
 
@@ -108,7 +112,6 @@ getSlidePrev = () => {
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
-
 // weather widget
 
 async function getWeather() {
@@ -132,8 +135,21 @@ async function getWeather() {
 
     }
 
-
-    // weatherError.textContent = `Error! city not found for '${city.value}'!`;
 }
 city.addEventListener('change', getWeather);
 window.addEventListener('load', getWeather);
+
+//Quote of the Day widget
+
+async function getQuotes() {
+    const quotes = 'quotesEn.json';
+    const res = await fetch(quotes);
+    const data = await res.json();
+    getRandomNum(0, data.length - 1);
+
+    quote.textContent = `${data[randomNum].text}`;
+    author.textContent = ` ${data[randomNum].author}`;
+
+}
+getQuotes();
+changeQuote.addEventListener('click', getQuotes);
