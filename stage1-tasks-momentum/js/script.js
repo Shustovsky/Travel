@@ -1,4 +1,5 @@
-// time & calendar
+import playList from './playList.js';
+
 const date = document.querySelector('.date');
 const time = document.querySelector('.time');
 
@@ -24,34 +25,36 @@ const changeQuote = document.querySelector('.change-quote');
 
 
 //функция вывода текущей даты 
-showDate = () => {
+let showDate = () => {
         const fullDate = new Date();
         const options = { weekday: 'long', month: 'long', day: 'numeric' };
         const currentDate = fullDate.toLocaleDateString('en-US', options);
         date.textContent = currentDate;
     }
     //функция вывода приветсвия в зависимости от времени суток 
-showGreeting = () => {
-        getTimeOfDay = () => {
-            const fullDate = new Date();
-            const hours = fullDate.getHours();
 
-            if (hours < 6) {
-                return 'night';
-            } else if (hours < 12) {
-                return 'morning';
-            } else if (hours < 18) {
-                return 'afternoon';
-            } else if (hours < 24) {
-                return 'evening';
-            }
-        };
+let getTimeOfDay = () => {
+    const fullDate = new Date();
+    const hours = fullDate.getHours();
+
+    if (hours < 6) {
+        return 'night';
+    } else if (hours < 12) {
+        return 'morning';
+    } else if (hours < 18) {
+        return 'afternoon';
+    } else if (hours < 24) {
+        return 'evening';
+    }
+};
+
+let showGreeting = () => {
         const timeOfDay = getTimeOfDay();
         const greetingText = `Good ${timeOfDay}`;
         greeting.textContent = greetingText;
     }
     //функция вывода текущего времени, а так же вызывает функцию даты и приветсвия
-showTime = () => {
+let showTime = () => {
     const fullDate = new Date();
     const currentTime = fullDate.toLocaleTimeString();
     time.textContent = currentTime;
@@ -80,12 +83,12 @@ function getLocalStorage() {
 window.addEventListener('load', getLocalStorage)
 
 //функция возвращает рандомное число от 1 до 20
-getRandomNum = (min, max) => {
+let getRandomNum = (min, max) => {
         randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     }
     // функци по рандомному смене фона в зависимости от времени суток и рандомного числа
 
-setBg = () => {
+let setBg = () => {
     getRandomNum(1, 20);
     const timeOfDay = getTimeOfDay();
     const bgNum = (randomNum + '').padStart(2, '0');
@@ -100,11 +103,11 @@ setBg = () => {
 setBg();
 
 // функция прокрутки слайдер вправо и влево
-getSlideNext = () => {
+let getSlideNext = () => {
     randomNum === 20 ? randomNum = 1 : randomNum++;
     setBg();
 };
-getSlidePrev = () => {
+let getSlidePrev = () => {
     randomNum === 1 ? randomNum = 20 : randomNum--;
     setBg();
 };
@@ -153,3 +156,72 @@ async function getQuotes() {
 }
 getQuotes();
 changeQuote.addEventListener('click', getQuotes);
+
+//audioplayer
+
+let isPlay = false;
+const play = document.querySelector('.play');
+const audio = new Audio();
+let playAudio = () => {
+    if (!isPlay) {
+        audio.src = playList[playNum].src;
+        audio.currentTime = 0;
+        audio.play();
+        isPlay = true;
+        play.classList.add('pause');
+
+    } else {
+        audio.pause();
+        isPlay = false;
+        play.classList.remove('pause');
+    }
+    document.querySelectorAll('.play-item').forEach((item, index) => {
+        if (index === playNum) {
+            console.log(playNum);
+            item.classList.add('item-active');
+
+        } else {
+            item.classList.remove('item-active');
+        }
+    });
+
+};
+
+
+play.addEventListener('click', playAudio);
+
+const playNextBtn = document.querySelector('.play-next');
+const playPrevBtn = document.querySelector('.play-prev');
+
+let playNum = 0;
+
+let playNext = () => {
+    playNum++;
+    if (playNum > playList.length - 1) {
+        playNum = 0;
+    }
+    isPlay = false
+    playAudio();
+};
+let playPrev = () => {
+    playNum--;
+    if (playNum < 0) {
+        playNum = playList.length - 1;
+    }
+    isPlay = false
+    playAudio();
+};
+
+playNextBtn.addEventListener('click', playNext);
+playPrevBtn.addEventListener('click', playPrev);
+
+const playListContainer = document.querySelector('.play-list')
+
+for (let i = 0; i < playList.length; i++) {
+    const li = document.createElement('li');
+    li.classList.add('play-item');
+    li.textContent = `${playList[i].title}`;
+    playListContainer.append(li);
+}
+
+audio.addEventListener('ended', playNext);
