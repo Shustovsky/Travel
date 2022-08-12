@@ -24,8 +24,10 @@ const author = document.querySelector('.author');
 const changeQuote = document.querySelector('.change-quote');
 
 let isPlay = false;
+const player = document.querySelector('.player');
 const play = document.querySelector('.play');
 const audio = new Audio();
+console.dir(audio);
 const playNextBtn = document.querySelector('.play-next');
 const playPrevBtn = document.querySelector('.play-prev');
 const playListContainer = document.querySelector('.play-list')
@@ -118,7 +120,6 @@ let getSlidePrev = () => {
     randomNum === 1 ? randomNum = 20 : randomNum--;
     setBg();
 };
-
 slideNext.addEventListener('click', getSlideNext);
 slidePrev.addEventListener('click', getSlidePrev);
 
@@ -164,20 +165,80 @@ async function getQuotes() {
 getQuotes();
 changeQuote.addEventListener('click', getQuotes);
 
-//audioplayer
+audio.addEventListener('loadeddata', () => {
+    player.querySelector('.time-player .length').textContent = getTimeCodeFromNum(audio.duration); //.duration свойство возвращает длину медиа в секундах или ноль, если данные по медиа недоступны.
+    audio.volume = .5;
+}, false);
+// функция показывающая длину песни в часах-минутах-секундах
+let getTimeCodeFromNum = (num) => {
+    let seconds = parseInt(num);
+    let minutes = parseInt(seconds / 60);
+    seconds -= minutes * 60;
+    const hours = parseInt(minutes / 60);
+    minutes -= hours * 60;
+
+    if (hours === 0) return `${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+    return `${String(hours).padStart(2, 0)}:${minutes}:${String(seconds % 60).padStart(2, 0)}`;
+}
+const timeline = player.querySelector('.timeline');
+//перемотка с помощью прогресс бара
+timeline.addEventListener('click', e => {
+        const timelineWidth = window.getComputedStyle(timeline).width; //высчитывает длину прогресс бара
+        const timetoSeek = e.offsetX / parseInt(timelineWidth) * audio.duration; //.offsetX, доступное только для чтения, показывает отступ курсора мыши по оси X от края целевого DOM узла.
+        audio.currentTime = timetoSeek; //перемотка песни
+    })
+    //регулировка громкости
+const volumeSlider = document.querySelector('.volume-slider');
+volumeSlider.addEventListener('click', e => {
+    const sliderWidth = window.getComputedStyle(volumeSlider).width;
+    const newVolume = e.offsetX / parseInt(sliderWidth);
+    audio.volume = newVolume;
+    console.log(audio.volume);
+    document.querySelector('.volume-percentage').style.width = newVolume * 100 + '%';
+}, false);
+
+//работа прогресс бара
+
+setInterval(() => {
+    const progressBar = document.querySelector('.progress');
+    progressBar.style.width = audio.currentTime / audio.duration * 100 + '%';
+    document.querySelector('.current').textContent = getTimeCodeFromNum(audio.currentTime);
+}, 500)
+
+
+const volume = document.querySelector('.volume');
+volume.addEventListener('click', () => {
+    audio.muted = !audio.muted;
+    if (audio.muted) {
+        volume.classList.toggle('volume-on');
+        volume.classList.toggle('volume-off');
+        audio.muted;
+
+    } else {
+        volume.classList.toggle('volume-on');
+        volume.classList.toggle('volume-off');
+
+    }
+})
+
+
+let trackTime = 0;
+let nameSong = document.querySelector('.name-song');
 
 let playAudio = () => {
     if (!isPlay) {
         audio.src = playList[playNum].src;
-        audio.currentTime = 0;
+        audio.currentTime = trackTime;
         audio.play();
         isPlay = true;
         play.classList.add('pause');
+        nameSong.textContent = playList[playNum].title
 
     } else {
-        audio.pause();
         isPlay = false;
         play.classList.remove('pause');
+        trackTime = audio.currentTime;
+        audio.pause();
     }
     document.querySelectorAll('.play-item').forEach((item, index) => {
         if (index === playNum) {
@@ -190,12 +251,12 @@ let playAudio = () => {
     });
 
 };
-
 play.addEventListener('click', playAudio);
 
 let playNum = 0;
 
 let playNext = () => {
+    trackTime = 0;
     playNum++;
     if (playNum > playList.length - 1) {
         playNum = 0;
@@ -204,6 +265,7 @@ let playNext = () => {
     playAudio();
 };
 let playPrev = () => {
+    trackTime = 0;
     playNum--;
     if (playNum < 0) {
         playNum = playList.length - 1;
@@ -211,7 +273,6 @@ let playPrev = () => {
     isPlay = false
     playAudio();
 };
-
 playNextBtn.addEventListener('click', playNext);
 playPrevBtn.addEventListener('click', playPrev);
 
@@ -221,9 +282,7 @@ for (let i = 0; i < playList.length; i++) {
     li.textContent = `${playList[i].title}`;
     playListContainer.append(li);
 }
-
 audio.addEventListener('ended', playNext);
-
 
 //9. Получение фонового изображения от API
 
