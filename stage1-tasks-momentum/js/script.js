@@ -23,6 +23,13 @@ const quote = document.querySelector('.quote');
 const author = document.querySelector('.author');
 const changeQuote = document.querySelector('.change-quote');
 
+let isPlay = false;
+const play = document.querySelector('.play');
+const audio = new Audio();
+const playNextBtn = document.querySelector('.play-next');
+const playPrevBtn = document.querySelector('.play-prev');
+const playListContainer = document.querySelector('.play-list')
+
 
 //функция вывода текущей даты 
 let showDate = () => {
@@ -159,9 +166,6 @@ changeQuote.addEventListener('click', getQuotes);
 
 //audioplayer
 
-let isPlay = false;
-const play = document.querySelector('.play');
-const audio = new Audio();
 let playAudio = () => {
     if (!isPlay) {
         audio.src = playList[playNum].src;
@@ -187,11 +191,7 @@ let playAudio = () => {
 
 };
 
-
 play.addEventListener('click', playAudio);
-
-const playNextBtn = document.querySelector('.play-next');
-const playPrevBtn = document.querySelector('.play-prev');
 
 let playNum = 0;
 
@@ -215,8 +215,6 @@ let playPrev = () => {
 playNextBtn.addEventListener('click', playNext);
 playPrevBtn.addEventListener('click', playPrev);
 
-const playListContainer = document.querySelector('.play-list')
-
 for (let i = 0; i < playList.length; i++) {
     const li = document.createElement('li');
     li.classList.add('play-item');
@@ -225,3 +223,26 @@ for (let i = 0; i < playList.length; i++) {
 }
 
 audio.addEventListener('ended', playNext);
+
+
+//9. Получение фонового изображения от API
+
+async function getLinkToImage() {
+    const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=do8HtGm3P6vH9IxczN2EX4hVxH591E4HisbwrgvEzPw';
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.urls.regular);
+
+}
+
+
+getLinkToImage();
+async function getLinkToImage2() {
+    const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=1334a81f1788b3b00d55d215514745b8&tags=nature&extras=url_l&format=json&nojsoncallback=1&tag_mode=all&sort=relevance&per_page=20&extras=url_h';
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log(data.photos.photo[0].url_l);
+
+}
+
+getLinkToImage2();
