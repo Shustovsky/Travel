@@ -32,15 +32,48 @@ body {
     padding: 20px;
 }
 
+.player {
+    width: 400px;
+    background: rgba(68, 68, 68, 0.3);
+    color: white;
+    font-size: 0.75em;
+    /* overflow: hidden; */
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    gap: 10px;
+}
+
+.name-song {
+    font-size: 1.3em;
+}
+
+.timeline {
+    background: white;
+    width: 100%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 2px 10px 0 #0008;
+}
+
+.progress {
+    background: coral;
+    width: 0%;
+    height: 100%;
+    transition: 0.25s;
+}
+
 .player-controls {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 120px;
-    margin-bottom: 28px;
 }
 
 .play-list {
+    grid-column: 2/3;
+    grid-row: 1/5;
     text-align: left;
 }
 
@@ -52,6 +85,11 @@ body {
     opacity: .8;
     cursor: pointer;
     transition: .3s;
+}
+
+.play-item button {
+    width: 15px;
+    height: 15px;
 }
 
 .play-item:hover {
@@ -66,8 +104,58 @@ body {
     font-weight: 900;
 }
 
+
+/* .play-item::after {
+    content: '';
+    background-image: url('../assets/svg/play.svg');
+    background-size: cover;
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    right: -20px;
+    top: 4px;
+    content: ' ';
+}
+
+.item-active:after {
+    content: '';
+    background-image: url('../assets/svg/pause.svg');
+    background-size: cover;
+    height: 17px;
+    width: 17px;
+    position: absolute;
+    right: -20px;
+    top: 4px;
+    content: ' ';
+} */
+
 .item-active::before {
     color: #C5B358;
+}
+
+.time-player {
+    display: flex;
+    gap: 5px;
+}
+
+.volume-container {
+    position: relative;
+    display: flex;
+}
+
+.volume {
+    cursor: pointer;
+    transform: scale(0.7);
+    width: 35px;
+    height: 35px;
+}
+
+.volume-on {
+    background: url('../assets/svg/volume-high.svg') center center/cover no-repeat;
+}
+
+.volume-off {
+    background: url('../assets/svg/volume-mute.svg') center center/cover no-repeat;
 }
 
 .player-icon,
