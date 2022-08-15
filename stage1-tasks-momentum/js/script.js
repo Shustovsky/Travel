@@ -197,7 +197,6 @@ soundVolume.addEventListener('input', () => {
 })
 let restoreValue;
 let muter = () => {
-    console.log(restoreValue);
     if (soundVolume.value === '0') {
         audio.volume = restoreValue;
         soundVolume.value = restoreValue;
@@ -206,6 +205,7 @@ let muter = () => {
         audio.volume = 0;
         soundVolume.value = 0;
     }
+    document.querySelector('.volume').classList.toggle('volume-off');
 }
 const volumeBtn = document.querySelector('.volume');
 volumeBtn.addEventListener('click', muter);

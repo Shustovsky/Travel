@@ -148,9 +148,6 @@ body {
     transform: scale(0.7);
     width: 35px;
     height: 35px;
-}
-
-.volume-on {
     background: url('../assets/svg/volume-high.svg') center center/cover no-repeat;
 }
 
