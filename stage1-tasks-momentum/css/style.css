@@ -104,30 +104,9 @@ body {
     font-weight: 900;
 }
 
-
-/* .play-item::after {
-    content: '';
-    background-image: url('../assets/svg/play.svg');
-    background-size: cover;
-    height: 17px;
-    width: 17px;
-    position: absolute;
-    right: -20px;
-    top: 4px;
-    content: ' ';
+.item-active {
+    color: #C5B358;
 }
-
-.item-active:after {
-    content: '';
-    background-image: url('../assets/svg/pause.svg');
-    background-size: cover;
-    height: 17px;
-    width: 17px;
-    position: absolute;
-    right: -20px;
-    top: 4px;
-    content: ' ';
-} */
 
 .item-active::before {
     color: #C5B358;
@@ -365,5 +344,9 @@ body {
     .name {
         font-size: 32px;
         padding: 5px;
+    }
+    .player {
+        grid-template-rows: 50px 25px 10px 55px;
+        z-index: 10000;
     }
 }

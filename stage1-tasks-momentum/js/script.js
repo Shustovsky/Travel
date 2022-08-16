@@ -25,13 +25,12 @@ const changeQuote = document.querySelector('.change-quote');
 
 let isPlay = false;
 const player = document.querySelector('.player');
-const play = document.querySelector('.play');
+const play = document.querySelectorAll('.play');
 const audio = new Audio();
-console.dir(audio);
+// console.dir(audio);
 const playNextBtn = document.querySelector('.play-next');
 const playPrevBtn = document.querySelector('.play-prev');
 const playListContainer = document.querySelector('.play-list')
-
 
 //функция вывода текущей даты 
 let showDate = () => {
@@ -65,7 +64,8 @@ let showGreeting = () => {
     //функция вывода текущего времени, а так же вызывает функцию даты и приветсвия
 let showTime = () => {
     const fullDate = new Date();
-    const currentTime = fullDate.toLocaleTimeString();
+    const options = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const currentTime = fullDate.toLocaleTimeString('ru-RU', options);
     time.textContent = currentTime;
     setTimeout(showTime, 1000);
     showDate();
@@ -92,32 +92,29 @@ function getLocalStorage() {
 window.addEventListener('load', getLocalStorage)
 
 //функция возвращает рандомное число от 1 до 20
-let getRandomNum = (min, max) => {
-        randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    }
-    // функци по рандомному смене фона в зависимости от времени суток и рандомного числа
-
+function getRandomNum(min, max) {
+    return randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+}
+// функция по рандомному смене фона в зависимости от времени суток и рандомного числа
+let randomNumForBg = getRandomNum(1, 20);
 let setBg = () => {
-    getRandomNum(1, 20);
     const timeOfDay = getTimeOfDay();
-    const bgNum = (randomNum + '').padStart(2, '0');
-
+    const bgNum = (randomNumForBg + '').padStart(2, '0');
     const img = new Image();
     img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/${bgNum}.jpg`;
     img.onload = () => {
         body.style.backgroundImage = `url(${img.src})`;
     }
-
 }
 setBg();
 
 // функция прокрутки слайдер вправо и влево
 let getSlideNext = () => {
-    randomNum === 20 ? randomNum = 1 : randomNum++;
+    randomNumForBg === 20 ? randomNumForBg = 1 : randomNumForBg++;
     setBg();
 };
 let getSlidePrev = () => {
-    randomNum === 1 ? randomNum = 20 : randomNum--;
+    randomNumForBg === 1 ? randomNumForBg = 20 : randomNumForBg--;
     setBg();
 };
 slideNext.addEventListener('click', getSlideNext);
@@ -191,9 +188,9 @@ timeline.addEventListener('click', e => {
     })
     //регулировка громкости и конпка mute
 const soundVolume = document.querySelector('.sound-volume');
+
 soundVolume.addEventListener('input', () => {
     audio.volume = soundVolume.value;
-    console.log(typeof soundVolume.value);
 })
 let restoreValue;
 let muter = () => {
@@ -228,11 +225,11 @@ let playAudio = () => {
         audio.currentTime = trackTime;
         audio.play();
         isPlay = true;
-        play.classList.add('pause');
+        play.forEach(item => item.classList.add('pause'));
         nameSong.textContent = playList[playNum].title;
     } else {
         isPlay = false;
-        play.classList.remove('pause');
+        play.forEach(item => item.classList.remove('pause'));
         trackTime = audio.currentTime;
         audio.pause();
     }
@@ -245,7 +242,7 @@ let playAudio = () => {
     });
 
 };
-play.addEventListener('click', playAudio);
+play.forEach(item => item.addEventListener('click', playAudio));
 
 let playNum = 0;
 
@@ -275,7 +272,10 @@ for (let i = 0; i < playList.length; i++) {
     li.classList.add('play-item');
     li.textContent = `${playList[i].title}`;
     playListContainer.append(li);
-
+    // const btn = document.createElement('button');
+    // btn.classList.add('play', 'player-icon');
+    // btn.addEventListener('click', playAudio);
+    // li.append(btn);
 }
 audio.addEventListener('ended', playNext);
 
@@ -287,8 +287,7 @@ document.querySelectorAll('.play-item').forEach((indicator, ind) => {
     })
 })
 
-//9. Получение фонового изображения от API
-
+// 9. Получение фонового изображения от API
 async function getLinkToImage() {
     const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=do8HtGm3P6vH9IxczN2EX4hVxH591E4HisbwrgvEzPw';
     const res = await fetch(url);
@@ -296,15 +295,13 @@ async function getLinkToImage() {
     console.log(data.urls.regular);
 
 }
-
-
 getLinkToImage();
+
 async function getLinkToImage2() {
     const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=1334a81f1788b3b00d55d215514745b8&tags=nature&extras=url_l&format=json&nojsoncallback=1&tag_mode=all&sort=relevance&per_page=20&extras=url_h';
     const res = await fetch(url);
     const data = await res.json();
-    console.log(data.photos.photo[0].url_l);
+    console.log(data.photos.photo[0].url_h);
 
 }
-
 getLinkToImage2();
