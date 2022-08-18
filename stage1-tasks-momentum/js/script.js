@@ -236,6 +236,11 @@ let playAudio = () => {
     document.querySelectorAll('.play-item').forEach((item, index) => {
         if (index === playNum) {
             item.classList.add('item-active');
+            if (isPlay) {
+                item.classList.add('item-active');
+            } else {
+                item.classList.remove('item-active');
+            }
         } else {
             item.classList.remove('item-active');
         }
@@ -272,36 +277,42 @@ for (let i = 0; i < playList.length; i++) {
     li.classList.add('play-item');
     li.textContent = `${playList[i].title}`;
     playListContainer.append(li);
-    // const btn = document.createElement('button');
-    // btn.classList.add('play', 'player-icon');
-    // btn.addEventListener('click', playAudio);
-    // li.append(btn);
+
 }
 audio.addEventListener('ended', playNext);
 
-document.querySelectorAll('.play-item').forEach((indicator, ind) => {
-    indicator.addEventListener('click', () => {
-        playNum = ind;
-        isPlay = false;
-        playAudio();
-    })
+let playItem = document.querySelectorAll('.play-item')
+
+playItem.forEach((item, index) => {
+    item.addEventListener('click', () => {
+        if (playNum === index) {
+            playAudio();
+            // playItem[index].classList.toggle('item-active');
+        } else {
+            playNum = index;
+            trackTime = 0;
+            isPlay = false;
+            playAudio();
+            // playItem[index].classList.add('item-active');
+        }
+    });
 })
 
 // 9. Получение фонового изображения от API
-async function getLinkToImage() {
-    const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=do8HtGm3P6vH9IxczN2EX4hVxH591E4HisbwrgvEzPw';
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data.urls.regular);
+// async function getLinkToImage() {
+//     const url = 'https://api.unsplash.com/photos/random?orientation=landscape&query=nature&client_id=do8HtGm3P6vH9IxczN2EX4hVxH591E4HisbwrgvEzPw';
+//     const res = await fetch(url);
+//     const data = await res.json();
+//     console.log(data.urls.regular);
 
-}
-getLinkToImage();
+// }
+// getLinkToImage();
 
-async function getLinkToImage2() {
-    const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=1334a81f1788b3b00d55d215514745b8&tags=nature&extras=url_l&format=json&nojsoncallback=1&tag_mode=all&sort=relevance&per_page=20&extras=url_h';
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data.photos.photo[0].url_h);
+// async function getLinkToImage2() {
+//     const url = 'https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=1334a81f1788b3b00d55d215514745b8&tags=nature&extras=url_l&format=json&nojsoncallback=1&tag_mode=all&sort=relevance&per_page=20&extras=url_h';
+//     const res = await fetch(url);
+//     const data = await res.json();
+//     console.log(data.photos.photo[0].url_h);
 
-}
-getLinkToImage2();
+// }
+// getLinkToImage2();
