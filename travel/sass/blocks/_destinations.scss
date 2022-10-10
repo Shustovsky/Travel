@@ -1,0 +1,66 @@
+.destinations {
+    max-height: 1069px;
+    background-color: #ffffff;
+    overflow: hidden;
+    /*  &__item {
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 16px;
+        } */
+    &__slider {
+        padding-top: 45px;
+        display: flex;
+        gap: 60px;
+        position: relative;
+        right: 540px;
+        min-width: 3440px;
+        max-height: 850px;
+        width: 92vw;
+        transition: all ease 1s;
+        &__item {
+            // &_img {
+            //     width: 100%;
+            // }
+            &_dscr {
+                position: relative;
+                bottom: 87px;
+                left: 14px;
+                font-family: 'Red Hat Text';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 32px;
+                line-height: 42px;
+                color: #FFFFFF;
+                text-transform: uppercase;
+            }
+        }
+        &_btns {
+            text-align: center;
+            padding-top: 19px;
+        }
+        &_btn {
+            cursor: pointer;
+            width: 20px;
+            height: 20px;
+            background: rgba(242, 120, 92, 0.5);
+            border-radius: 100%;
+            border: none;
+            margin: 0 3px;
+            &-active {
+                background: #F2785C;
+            }
+        }
+        &_arrow {
+            display: inline-block;
+            position: relative;
+            bottom: 848px;
+            width: 260px;
+            height: 800px;
+            &-right {
+                left: 64%;
+            }
+        }
+    }
+}

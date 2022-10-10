@@ -1,0 +1,39 @@
+.steps {
+    position: relative;
+    .title {
+        padding-top: 80px;
+    }
+    &__container {
+        min-height: 424px;
+        background-color: #ffffff;
+    }
+    &__items {
+        padding: 40px 132px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    &__item {
+        &:nth-child(2) {
+            padding-left: 73px;
+        }
+        &_icon {
+            width: 100px;
+            height: 100px;
+            background: #F2785C;
+            border-radius: 16px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        p {
+            padding-top: 30px;
+            font-family: 'Aleo';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 20px;
+            line-height: 24px;
+            color: #0D606F;
+        }
+    }
+}
